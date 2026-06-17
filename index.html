@@ -299,7 +299,8 @@ nav{background:rgba(255,255,255,0.3) !important;backdrop-filter:blur(12px);-webk
 .t-info { padding: 1.5rem 1.25rem; text-align: left; flex-grow: 1; display: flex; flex-direction: column; }
 .t-name { font-weight: 700; color: var(--primary); font-size: 1.15rem; margin-bottom: 5px; line-height: 1.3; }
 .t-subj { font-weight: 600; font-size: 0.85rem; margin-bottom: 8px; }
-.t-qual { font-size: 0.75rem; color: var(--muted); line-height: 1.5; margin-top: auto; display: none; }
+.t-qual { font-size: 0.72rem; color: var(--muted); line-height: 1.4; margin-top: 6px; padding: 0 16px; }
+.modal-qual { font-size: 0.82rem; color: var(--muted); line-height: 1.5; margin-top: 8px; text-align: center; padding: 0 10px; }
 .t-action { margin-top: 1.5rem; display: flex; align-items: center; justify-content: space-between; }
 .view-btn { background: var(--primary-dark); color: #fff; padding: 6px 16px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; transition: background .2s; }
 .view-btn:hover { background: var(--primary); }
@@ -928,6 +929,7 @@ footer .copy{font-size:0.8rem;text-align:center; max-width: 1200px; margin: 0 au
     <div class="modal-body">
       <div class="modal-name" id="mName"></div>
       <div class="modal-subj" id="mSubj"></div>
+      <div class="modal-qual" id="mQual"></div>
       <div class="modal-tt-title" data-si="පන්ති කාලසටහන" data-en="Class Schedule">පන්ති කාලසටහන</div>
       <div class="modal-tt-list" id="mTTList"></div>
     </div>
@@ -1131,6 +1133,7 @@ function renderTeacherGrid() {
       <div class="t-info">
         <div class="t-name">${tname}</div>
         <div class="t-subj" style="color:${t.bg}; font-family:'Noto Sans Sinhala',sans-serif;">${tsubj}</div>
+        ${t.qual ? `<div class="t-qual">🎓 ${t.qual}</div>` : ''}
         <div class="t-action">
           <button class="view-btn" onclick="openTeacherModal('${t.init}')">View Profile</button>
           <div class="t-arrow">&#8594;</div>
@@ -1211,6 +1214,8 @@ function openTeacherModal(init) {
   document.getElementById('mName').innerText = lang === 'en' ? t.nameEn : t.name;
   document.getElementById('mSubj').innerText = lang === 'en' ? t.subjEn : t.subj;
   document.getElementById('mSubj').style.color = t.bg;
+  const mQualEl = document.getElementById('mQual');
+  if(t.qual) { mQualEl.innerHTML = '🎓 ' + t.qual; mQualEl.style.display = 'block'; } else { mQualEl.style.display = 'none'; }
   
   const ttList = document.getElementById('mTTList');
   let classes = [];
