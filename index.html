@@ -423,6 +423,8 @@ footer .copy{font-size:0.8rem;text-align:center; max-width: 1200px; margin: 0 au
   .about-inner{grid-template-columns:1fr;}
   .stat:nth-child(2){border-right:none;}
   .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid rgba(255,255,255,0.1);}
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .footer-brand-col { grid-column: 1 / -1; }
 }
 @media(max-width:600px){
   nav{padding:0 4%;}
@@ -444,6 +446,9 @@ footer .copy{font-size:0.8rem;text-align:center; max-width: 1200px; margin: 0 au
   .car-btn.prev{left: -5px;}
   .car-btn.next{right: -5px;}
   .car-btn{width: 36px; height: 36px; font-size: 1.1rem;}
+  .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+  .footer-brand-col h3 { justify-content: center; }
+  .footer-col ul { align-items: center; }
 }
 
 /* ANIMATIONS & EFFECTS */
