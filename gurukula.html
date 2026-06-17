@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ගුරුකුල අධ්‍යාපන ආයතනය – යටියන | Gurukula Education Institute – Yatiyena</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --primary:#ea580c;--primary-dark:#1e293b;--accent:#e11d48;--accent2:#d97706;
+  --text:#334155;--muted:#64748b;--bg:#fff7ed;--white:#ffffff;
+  --border:#e2e8f0;--card-shadow:0 4px 20px rgba(0,0,0,0.05);
+}
+body{font-family:'Inter','Noto Sans Sinhala',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+.lang-si{font-family:'Noto Sans Sinhala','Inter',sans-serif;}
+
+/* LANG TOGGLE */
+.lang-toggle{display:flex;align-items:center;gap:2px;background:var(--bg);border:1px solid var(--border);border-radius:30px;padding:3px;flex-shrink:0;}
+.lang-btn{padding:5px 13px;border-radius:24px;border:none;background:transparent;font-size:0.78rem;font-weight:700;cursor:pointer;color:var(--muted);transition:all .2s;letter-spacing:0.3px;}
+.lang-btn.active{background:var(--primary);color:#fff;box-shadow:0 2px 6px rgba(234,88,12,0.3);}
+
+/* NAV */
+nav{background:rgba(255,255,255,0.3) !important;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.2);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:80px;position:fixed;top:0;left:0;right:0;width:100%;z-index:200;box-shadow:0 2px 10px rgba(0,0,0,0.05);gap:1rem;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+.logo-icon{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--primary) 0%,var(--accent) 100%);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1rem;color:#fff;}
+.logo-img{width:48px;height:48px;object-fit:contain;}
+.logo-text{font-size:1.4rem;font-weight:800;color:#111827;line-height:1;}
+.logo-text span{color:#2563eb;}
+.logo-sub{font-size:0.6rem;color:#4b5563;font-family:'Noto Sans Sinhala',sans-serif;display:block;margin-top:2px;}
+.nav-right{display:flex;align-items:center;gap:2rem;}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
+.nav-links a{color:#111827;text-decoration:none;font-size:0.95rem;font-weight:800;transition:color .2s;}
+.nav-links a:hover, .nav-links a.active{color:#2563eb;}
+.nav-cta{background:#b91c1c!important;color:#fff!important;padding:8px 24px;border-radius:9999px;font-weight:600!important;font-size:0.875rem!important;white-space:nowrap;box-shadow:0 4px 15px rgba(185,28,28,0.3);transition:all 0.2s;}
+.nav-cta:hover{background:#ef4444!important;transform:scale(1.03);box-shadow:0 6px 20px rgba(239,68,68,0.4);}
+
+/* HERO NEW */
+.hero-new { background: linear-gradient(135deg, #fffbf5 0%, #fff7ed 50%, #fef3c7 100%); min-height: calc(100vh - 80px); display: flex; align-items: center; padding: 2rem 5% 0; overflow: hidden; position: relative; }
+.hero-new::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 70% at 70% 50%, rgba(234,88,12,0.06) 0%, transparent 70%); pointer-events: none; }
+.hero-new-container { max-width: 1250px; margin: 0 auto; display: grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; align-items: center; width: 100%; position: relative; z-index: 1; }
+.hero-new-left { max-width: 700px; }
+.hero-badge-top { display: inline-flex; align-items: center; gap: 8px; font-size: 0.78rem; font-weight: 800; color: #ea580c; letter-spacing: 2px; margin-bottom: 1.5rem; text-transform: uppercase; background: rgba(234,88,12,0.08); border: 1px solid rgba(234,88,12,0.2); padding: 6px 16px; border-radius: 30px; }
+.hero-badge-top::before { content: '●'; font-size: 0.5rem; animation: blink 1.5s ease-in-out infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+.hero-new h1 { font-size: clamp(2.5rem, 4vw, 3.8rem); font-weight: 800; color: #111827; line-height: 1.4; margin-bottom: 1.5rem; }
+.hero-new h1 .hl { color: #ea580c; position: relative; }
+.hero-new h1 .hl::after { content: ''; position: absolute; bottom: 2px; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #ea580c, #f97316); border-radius: 2px; opacity: 0.4; }
+.hero-new p { font-size: 1.05rem; color: #4b5563; line-height: 1.7; margin-bottom: 2.5rem; }
+.hero-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.hero-actions .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%); color: #fff; padding: 14px 32px; border-radius: 30px; font-weight: 700; text-decoration: none; font-size: 1rem; box-shadow: 0 4px 20px rgba(234,88,12,0.35); transition: transform 0.2s, box-shadow 0.2s; }
+.hero-actions .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(234,88,12,0.45); }
+.hero-actions .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #374151; padding: 14px 28px; border-radius: 30px; font-weight: 600; text-decoration: none; font-size: 0.95rem; border: 2px solid #e5e7eb; transition: all 0.2s; }
+.hero-actions .btn-secondary:hover { border-color: #ea580c; color: #ea580c; background: rgba(234,88,12,0.04); }
+.hero-learners { display: flex; align-items: center; gap: 1rem; margin-top: 2.5rem; padding: 1rem 1.5rem; background: rgba(255,255,255,0.7); backdrop-filter: blur(8px); border-radius: 16px; border: 1px solid rgba(0,0,0,0.06); width: fit-content; }
+.learner-avatars { display: flex; }
+.learner-av { width: 38px; height: 38px; border-radius: 50%; border: 3px solid #fff; margin-left: -12px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; color: #fff; flex-shrink: 0; }
+.learner-av:first-child { margin-left: 0; }
+.learner-text { display: flex; flex-direction: column; }
+.learner-text strong { font-size: 1rem; color: #111827; font-weight: 800; }
+.learner-text span { font-size: 0.78rem; color: #6b7280; }
+
+.hero-new-right { position: relative; height: 100%; display: flex; align-items: center; justify-content: flex-start; }
+.hero-bg-shape { position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, #fed7aa 0%, #fbbf24 50%, transparent 70%); border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 0; filter: blur(70px); opacity: 0.5; }
+.hero-bg-shape2 { position: absolute; width: 300px; height: 300px; background: radial-gradient(circle, rgba(234,88,12,0.15) 0%, transparent 70%); border-radius: 50%; bottom: 10%; right: 5%; z-index: 0; filter: blur(50px); }
+.hero-img-wrapper { position: relative; z-index: 2; width: 100%; max-width: 800px; }
+.main-hero-img { width: 140%; max-width: 140%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 25px 40px rgba(0,0,0,0.12)); transform: scale(1.4) translateX(-10%) translateY(5%); transform-origin: center; animation: heroFloat 8s ease-in-out infinite; }
+@keyframes heroFloat { 0%, 100% { transform: scale(1.4) translateX(-10%) translateY(5%); } 50% { transform: scale(1.4) translateX(-10%) translateY(0%); } }
+
+.floating-badge { position: absolute; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); padding: 12px 18px; border-radius: 16px; display: flex; align-items: center; gap: 10px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.9); transition: transform 0.3s; }
+.floating-badge.fb-top { top: 18%; right: -2%; animation: floatBadge 5s ease-in-out infinite 0s; }
+.floating-badge.fb-mid { top: 48%; right: -12%; animation: floatBadge 6s ease-in-out infinite 1.5s; }
+.floating-badge.fb-bottom { bottom: 18%; right: -2%; animation: floatBadge 5.5s ease-in-out infinite 0.8s; }
+@keyframes floatBadge { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
+.fb-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+.fb-text { display: flex; flex-direction: column; }
+.fb-text strong { font-size: 0.9rem; font-weight: 800; color: #111827; white-space: nowrap; }
+.fb-text span { font-size: 0.72rem; color: #6b7280; white-space: nowrap; }
+
+/* scroll indicator */
+.scroll-hint { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 6px; color: #9ca3af; font-size: 0.72rem; font-weight: 600; letter-spacing: 1px; animation: fadeInUp 1s ease 2s both; z-index: 5; }
+.scroll-arrow { width: 20px; height: 20px; border-right: 2px solid #d1d5db; border-bottom: 2px solid #d1d5db; transform: rotate(45deg); animation: scrollBounce 1.5s ease-in-out infinite; }
+@keyframes scrollBounce { 0%, 100% { transform: rotate(45deg) translateY(0); } 50% { transform: rotate(45deg) translateY(5px); } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateX(-50%) translateY(10px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
+
+@media (max-width: 900px) {
+  .hero-new-container { grid-template-columns: 1fr; padding-bottom: 3rem; text-align: center; }
+  .hero-new-left { margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+  .learner-avatars { justify-content: center; }
+  .hero-learners { width: auto; }
+  .floating-badge.fb-top { top: 5%; right: 3%; } 
+  .floating-badge.fb-mid { display: none; } 
+  .floating-badge.fb-bottom { bottom: 5%; right: 3%; }
+  .scroll-hint { display: none; }
+  .hero-actions { justify-content: center; }
+}
+
+
+/* STATS */
+.stats-bar {
+  background: var(--white);
+  max-width: 1100px;
+  margin: -50px auto 3rem;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+  z-index: 100;
+  padding: 1.5rem 1rem;
+}
+.stat {
+  padding: 1rem;
+  text-align: center;
+  border-right: 1px solid var(--border);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.stat:last-child {
+  border-right: none;
+}
+.stat:hover {
+  transform: translateY(-8px);
+}
+.stat-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+  transition: transform 0.3s ease;
+}
+.stat:hover .stat-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+.stat-num {
+  font-size: 2.8rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.stat-label {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 700;
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+@media (max-width: 800px) {
+  .stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 2rem 5%;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+  }
+  .stat {
+    border-right: none;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* FEATURES */
+.features{padding:3rem 5% 4rem;background:var(--bg);}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1200px;margin:0 auto;}
+.feature-card{
+  background:var(--white);border-radius:20px;padding:2.5rem 2rem;
+  box-shadow:0 4px 24px rgba(0,0,0,0.06);
+  text-align:center;position:relative;transition:transform .2s,box-shadow .2s;
+  border:1px solid rgba(255,255,255,0.8);
+}
+.feature-card:hover{transform:translateY(-5px);box-shadow:0 12px 40px rgba(0,0,0,0.1);}
+/* Rainbow glow on center card */
+.feature-card.glow::before{
+  content:'';position:absolute;inset:-2px;border-radius:22px;z-index:-1;
+  background:conic-gradient(from 180deg,#ff6b9d,#c44dff,#4d9fff,#00e5a0,#ffe044,#ff6b9d);
+  opacity:.35;filter:blur(8px);
+}
+.feature-card h3{font-size:1.05rem;font-weight:700;color:var(--accent);margin-bottom:0.75rem;line-height:1.3;}
+.feature-card p{font-size:0.87rem;color:var(--muted);line-height:1.7;text-align:center; margin-bottom: 1rem;}
+.feature-list{list-style:none;padding:0;margin:0;text-align:left;display:flex;flex-direction:column;gap:0.6rem;}
+.feature-list li{font-size:0.85rem;color:var(--text);line-height:1.5;padding:0.5rem 0.75rem;background:var(--bg);border-radius:8px;border:1px solid var(--border);}
+
+/* ABOUT SPLIT */
+.about-section{padding:4rem 5%;background:var(--bg);}
+.about-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.about-text h2{font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:var(--text);line-height:1.2;margin-bottom:1.25rem;}
+.about-text p{font-size:0.9rem;color:var(--muted);line-height:1.8;margin-bottom:1rem;}
+.about-img-wrap{position:relative;}
+.about-slider{border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.12);aspect-ratio:4/3;background:var(--bg);}
+.about-slide{display:none;width:100%;height:100%;}
+.about-slide.active{display:flex;align-items:center;justify-content:center;}
+.about-slide-inner{
+  width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:3rem;font-weight:800;color:rgba(255,255,255,0.6);
+  flex-direction:column;gap:0.5rem;
+}
+.about-slide-label{font-size:0.9rem;font-weight:600;color:rgba(255,255,255,0.7);font-family:'Noto Sans Sinhala',sans-serif;}
+.about-dots{display:flex;gap:8px;justify-content:center;margin-top:1rem;}
+.about-dot{width:10px;height:10px;border-radius:50%;background:var(--border);cursor:pointer;transition:background .2s;}
+.about-dot.active{background:var(--primary);}
+
+/* TEACHER CAROUSEL (Syzygy fan style) */
+.carousel-section{padding:4rem 5% 5rem;background:var(--bg);}
+.carousel-inner{max-width:1200px;margin:0 auto;}
+.carousel-wrap{
+  position:relative;
+  height:420px;
+  margin:0 60px;
+  overflow:visible;
+}
+.carousel-track{
+  position:relative;
+  width:100%;height:100%;
+}
+.car-card-pos{position:absolute;top:0;width:auto;}
+.car-card{
+  border-radius:18px;overflow:hidden;
+  box-shadow:0 4px 24px rgba(0,0,0,0.12);
+  background:var(--white);
+}
+.car-center .car-card{box-shadow:0 12px 48px rgba(0,0,0,0.18);}
+.car-photo{
+  display:flex;align-items:center;justify-content:center;
+  position:relative;width:100%;
+}
+.car-init{
+  font-size:4rem;font-weight:800;color:rgba(255,255,255,0.7);
+  font-family:'Inter',sans-serif;letter-spacing:-2px;
+}
+.car-center .car-init{font-size:5rem;}
+.car-info{padding:0.9rem 1.1rem 1.1rem;text-align:center;}
+.car-info-center{padding:1rem 1.25rem 1.25rem;}
+.car-name{color:var(--text);line-height:1.3;margin-bottom:3px;}
+.car-subj{font-weight:700;margin-bottom:4px;}
+.car-qual{font-size:0.72rem;color:var(--muted);line-height:1.4;margin-top:4px;}
+.car-btn{
+  position:absolute;top:50%;transform:translateY(-50%);
+  background:var(--white);border:1px solid var(--border);
+  border-radius:50%;width:48px;height:48px;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;z-index:20;font-size:1.4rem;
+  color:var(--primary);box-shadow:var(--card-shadow);
+  transition:all .2s;
+}
+.car-btn:hover{background:var(--primary);color:#fff;border-color:var(--primary);}
+.car-btn.prev{left:-60px;}.car-btn.next{right:-60px;}
+.car-dots{display:flex;gap:8px;justify-content:center;margin-top:2rem;}
+.car-dot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:pointer;transition:all .25s;}
+.car-dot.active{background:var(--primary);width:24px;border-radius:4px;}
+
+/* SEC HEADER */
+.sec-header{text-align:center;margin-bottom:3rem;}
+.sec-header h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;color:var(--text);}
+.sec-header h2 span{color:var(--primary);}
+.sec-header p{color:var(--muted);font-size:0.88rem;margin-top:0.5rem;}
+.divider{width:48px;height:4px;background:var(--accent);border-radius:2px;margin:10px auto 0;}
+
+/* WHY */
+.why-section{padding:5rem 5%;background:var(--white);}
+.why-inner{max-width:1200px;margin:0 auto;}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;margin-top:2.5rem;}
+.why-card{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:2rem 1.75rem;display:flex;flex-direction:column;gap:1rem;transition:all 0.3s ease;position:relative;overflow:hidden;}
+.why-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:20px 20px 0 0;opacity:0;transition:opacity 0.3s;}
+.why-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,0.08);border-color:transparent;}
+.why-card:hover::before{opacity:1;}
+.why-card-1::before{background:linear-gradient(90deg,#ea580c,#f97316);}
+.why-card-2::before{background:linear-gradient(90deg,#1a3a8f,#3b82f6);}
+.why-card-3::before{background:linear-gradient(90deg,#059669,#10b981);}
+.why-card-4::before{background:linear-gradient(90deg,#7c3aed,#a78bfa);}
+.why-card-5::before{background:linear-gradient(90deg,#0891b2,#22d3ee);}
+.why-card-6::before{background:linear-gradient(90deg,#db2777,#f472b6);}
+.why-icon-wrap{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;}
+.why-card h4{font-size:1rem;font-weight:800;color:var(--text);line-height:1.3;}
+.why-card p{font-size:0.83rem;color:var(--muted);line-height:1.65;flex-grow:1;}
+.why-tag{display:inline-block;font-size:0.72rem;font-weight:700;padding:4px 10px;border-radius:20px;margin-top:0.5rem;}
+@media(max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:580px){.why-grid{grid-template-columns:1fr;}}
+
+/* ALL TEACHERS GRID */
+.all-teachers-section { padding: 4rem 5%; background: var(--white); }
+.teachers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem; }
+.t-card { background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06); border: 1px solid var(--border); transition: transform .2s, box-shadow .2s; display: flex; flex-direction: column; }
+.t-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
+.t-photo { height: 240px; display: flex; align-items: center; justify-content: center; position: relative; }
+.t-init { font-size: 5rem; font-weight: 800; color: rgba(255,255,255,0.7); font-family: 'Inter', sans-serif; letter-spacing: -2px; }
+.t-info { padding: 1.5rem 1.25rem; text-align: left; flex-grow: 1; display: flex; flex-direction: column; }
+.t-name { font-weight: 700; color: var(--primary); font-size: 1.15rem; margin-bottom: 5px; line-height: 1.3; }
+.t-subj { font-weight: 600; font-size: 0.85rem; margin-bottom: 8px; }
+.t-qual { font-size: 0.75rem; color: var(--muted); line-height: 1.5; margin-top: auto; display: none; }
+.t-action { margin-top: 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+.view-btn { background: var(--primary-dark); color: #fff; padding: 6px 16px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; transition: background .2s; }
+.view-btn:hover { background: var(--primary); }
+.t-arrow { width: 32px; height: 32px; border-radius: 50%; background: var(--bg); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+@media(max-width:1100px){ .teachers-grid { grid-template-columns: repeat(3, 1fr); } }
+@media(max-width:800px){ .teachers-grid { grid-template-columns: repeat(2, 1fr); } }
+@media(max-width:500px){ .teachers-grid { grid-template-columns: 1fr; } }
+
+.av-r{background:#e8192c;}.av-b{background:#1a3a8f;}.av-g{background:#059669;}
+.av-p{background:#7c3aed;}.av-o{background:#ea580c;}.av-t{background:#0891b2;}
+.av-pk{background:#db2777;}.av-dk{background:#1e293b;}.av-i{background:#4f46e5;}
+.pr{background:#fff0f0;color:#c41e3a;}.pb{background:#eef2ff;color:#1a3a8f;}
+.pg{background:#d1fae5;color:#065f46;}.pp{background:#f5f3ff;color:#5b21b6;}
+.po{background:#fff7ed;color:#c2410c;}.pt{background:#e0f7fa;color:#00838f;}
+.ppk{background:#fce7f3;color:#9d174d;}.pi{background:#eef2ff;color:#3730a3;}
+
+/* MODAL */
+.modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 1000; display: none; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; padding: 20px; }
+.modal-overlay.active { display: flex; opacity: 1; }
+.modal-content { background: #fff; width: 100%; max-width: 500px; border-radius: 16px; overflow: hidden; position: relative; transform: translateY(20px); transition: transform 0.3s; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+.modal-overlay.active .modal-content { transform: translateY(0); }
+.modal-close { position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.1); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.2rem; border: none; color: #333; z-index: 10; transition: background 0.2s; }
+.modal-close:hover { background: rgba(0,0,0,0.2); }
+.modal-header { height: 140px; display: flex; align-items: center; justify-content: center; position: relative; }
+.modal-init { font-size: 4rem; font-weight: 800; color: rgba(255,255,255,0.7); }
+.modal-body { padding: 2rem; }
+.modal-name { font-size: 1.4rem; font-weight: 800; color: var(--text); margin-bottom: 5px; }
+.modal-subj { font-size: 1rem; font-weight: 600; margin-bottom: 20px; }
+.modal-tt-title { font-size: 0.9rem; font-weight: 700; color: var(--muted); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+.modal-tt-list { display: flex; flex-direction: column; gap: 10px; max-height: 40vh; overflow-y: auto; }
+.modal-tt-item { background: var(--bg); padding: 12px 16px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; border: 1px solid var(--border); }
+.modal-tt-grade { font-weight: 700; color: var(--primary); font-size: 0.95rem; }
+.modal-tt-time { font-size: 0.85rem; color: var(--text); display: flex; align-items: center; gap: 10px; }
+.modal-tt-day { font-weight: 700; background: rgba(0,0,0,0.05); padding: 2px 8px; border-radius: 4px; }
+
+/* TIMETABLE */
+.tt-section{padding:5rem 5%;background:var(--bg);}
+.tt-inner{max-width:1100px;margin:0 auto;}
+.tt-section .sec-header h2{color:var(--primary);}
+.tt-section .sec-header p{color:var(--muted);}
+.tt-section .divider{background:var(--accent);}
+.grade-tabs{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:3rem;}
+.gtab{background:var(--white);color:var(--muted);border:1px solid var(--border);padding:10px 24px;border-radius:30px;font-size:0.85rem;font-weight:600;cursor:pointer;transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,0.02);}
+.gtab.active,.gtab:hover{background:var(--primary);color:var(--white);border-color:var(--primary);transform:translateY(-2px);box-shadow:0 6px 15px rgba(15,23,42,0.15);}
+.tt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;}
+.tt-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;transition:all .3s;box-shadow:0 4px 15px rgba(0,0,0,0.02);}
+.tt-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.06);border-color:var(--primary);}
+.tt-subj{font-size:0.95rem;font-weight:700;color:var(--primary);}
+.tt-right{text-align:right;}
+.tt-day{font-size:0.75rem;color:var(--muted);display:block;margin-bottom:4px;font-weight:600;}
+.tt-time{font-size:0.85rem;color:var(--accent);font-weight:700;}
+.em-strip{margin-top:3rem;background:var(--white);border:1px solid var(--border);border-radius:20px;padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;box-shadow:var(--card-shadow);}
+.em-strip .em-text{color:var(--primary);}
+.em-strip .em-text h4{font-size:1.05rem;font-weight:800;margin-bottom:6px;}
+.em-strip .em-text p{font-size:0.85rem;color:var(--muted);font-weight:500;}
+.em-badge{background:rgba(217,119,6,0.1);color:var(--accent2);font-weight:700;font-size:0.85rem;padding:10px 20px;border-radius:30px;border:1px solid rgba(217,119,6,0.2);}
+
+/* FEEDBACK */
+.fb-section{padding:4rem 5%;background:var(--bg);}
+.fb-inner{max-width:1100px;margin:0 auto;}
+.fb-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+.fb-card{background:var(--white);border-radius:16px;padding:1.5rem;box-shadow:var(--card-shadow);border:1px solid var(--border);position:relative;}
+.fb-card::before{content:'"';font-size:5rem;color:var(--accent2);opacity:.12;position:absolute;top:0;right:14px;line-height:1;font-family:Georgia,serif;}
+.fb-user{display:flex;align-items:center;gap:10px;margin-bottom:1rem;}
+.fb-av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.88rem;color:#fff;flex-shrink:0;}
+.fb-name{font-size:0.88rem;font-weight:700;}
+.fb-school{font-size:0.72rem;color:var(--muted);}
+.fb-stars{color:var(--accent2);font-size:0.78rem;margin-bottom:0.7rem;}
+.fb-text{font-size:0.81rem;color:var(--muted);line-height:1.65;}
+
+/* FAQ */
+.faq-section{padding:4rem 5%;background:var(--white);}
+.faq-inner{max-width:800px;margin:0 auto;}
+.faq-item{border:1px solid var(--border);border-radius:12px;margin-bottom:0.75rem;overflow:hidden;}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;cursor:pointer;font-weight:600;font-size:0.9rem;transition:background .2s;}
+.faq-q:hover{background:var(--bg);}
+.faq-icon{font-size:1.2rem;color:var(--accent);transition:transform .3s;flex-shrink:0;margin-left:12px;}
+.faq-q.open .faq-icon{transform:rotate(45deg);}
+.faq-a{padding:0 1.25rem;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s;font-size:0.84rem;color:var(--muted);line-height:1.7;}
+.faq-a.open{max-height:300px;padding:0 1.25rem 1rem;}
+
+/* CONTACT */
+.contact-section{padding:5rem 5%;background:var(--bg);}
+.contact-inner{max-width:1000px;margin:0 auto;}
+.contact-card{background:var(--white);border-radius:30px;padding:3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.05);border:1px solid var(--border);}
+.contact-card::before{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:rgba(225,29,72,0.03);top:-100px;right:-100px;z-index:0;}
+.contact-left{position:relative;z-index:1;}
+.contact-left h2{font-size:1.8rem;font-weight:800;color:var(--primary);margin-bottom:0.6rem;}
+.contact-left p{font-size:0.95rem;color:var(--muted);margin-bottom:1.8rem;line-height:1.6;}
+.phone-big{font-size:2rem;font-weight:800;color:var(--accent);text-decoration:none;display:block;margin-bottom:1.5rem;letter-spacing:1px;transition:color .3s;}
+.phone-big:hover{color:var(--primary);}
+.cd-items{display:flex;flex-direction:column;gap:12px;}
+.cd-item{display:flex;align-items:center;gap:12px;font-size:0.9rem;color:var(--muted);}
+.cd-item strong{color:var(--primary);font-weight:700;}
+.contact-right{position:relative;z-index:1;display:flex;flex-direction:column;gap:1rem;}
+.loc-card{background:var(--bg);border:1px solid var(--border);border-radius:20px;padding:1.5rem;transition:all .3s;}
+.loc-card:hover{transform:translateY(-3px);box-shadow:var(--card-shadow);background:var(--white);}
+.loc-card h4{color:var(--primary);font-size:0.95rem;font-weight:700;margin-bottom:8px;}
+.loc-card p{color:var(--muted);font-size:0.85rem;line-height:1.6;}
+.call-btn{display:inline-block;background:var(--primary);color:#fff;padding:16px 32px;border-radius:30px;text-decoration:none;font-weight:700;font-size:0.95rem;text-align:center;box-shadow:0 8px 20px rgba(15,23,42,0.2);transition:all .3s;}
+.call-btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(15,23,42,0.3);background:var(--accent);}
+
+/* FOOTER */
+footer{background:#111827;color:rgba(255,255,255,0.6);padding:0 5% 2rem;position:relative;margin-top:5rem;}
+
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:2rem;padding:4rem 0 3rem;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:2rem; max-width: 1200px; margin: 0 auto;}
+.footer-brand-col h3{font-size:2rem;font-weight:800;color:#fff;display:flex;align-items:center;gap:10px;margin-bottom:1rem;}
+.footer-brand-col p{font-size:0.85rem;line-height:1.6;margin-bottom:1.5rem;}
+.footer-col h4{color:#fff;font-size:1rem;font-weight:700;margin-bottom:1.5rem;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.footer-col ul a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;transition:color .2s;}
+.footer-col ul a:hover{color:#fff;}
+footer .copy{font-size:0.8rem;text-align:center; max-width: 1200px; margin: 0 auto;}
+
+@media(max-width:900px){
+  .feature-grid{grid-template-columns:1fr 1fr;}
+  .why-grid{grid-template-columns:1fr;}
+  .fb-grid{grid-template-columns:1fr 1fr;}
+  .contact-card{grid-template-columns:1fr;}
+  .stats-bar{grid-template-columns:repeat(2,1fr);}
+  .about-inner{grid-template-columns:1fr;}
+  .stat:nth-child(2){border-right:none;}
+  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid rgba(255,255,255,0.1);}
+}
+@media(max-width:600px){
+  nav{padding:0 4%;}
+  .nav-right{gap:0.75rem;}
+  .nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);flex-direction:column;padding:1rem 4%;gap:0;z-index:100;}
+  .nav-links.open{display:flex;}
+  .nav-links li{padding:10px 0;border-bottom:1px solid var(--border);}
+  .nav-links li:last-child{border-bottom:none;}
+  .hamburger{display:flex;}
+  .feature-grid{grid-template-columns:1fr;}
+  .teachers-grid{grid-template-columns:repeat(2,1fr);}
+  .tt-grid{grid-template-columns:1fr;}
+  .fb-grid{grid-template-columns:1fr;}
+  .hero-content{padding:3.5rem 4% 5rem;}
+  .footer-top{flex-direction:column;text-align:center;}
+  .footer-links{flex-wrap:wrap;justify-content:center;gap:1rem;}
+  .lang-btn{padding:4px 10px;font-size:0.72rem;}
+}
+
+/* ANIMATIONS & EFFECTS */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+.hc1 { animation: float 8s ease-in-out infinite; }
+.hc2 { animation: float 6s ease-in-out infinite reverse; }
+
+/* Enhanced Hover Effects */
+.btn-red:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 8px 25px rgba(232,25,44,0.5);}
+.feature-card{transition:all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);}
+.feature-card:hover{transform:translateY(-8px);box-shadow:0 15px 45px rgba(0,0,0,0.12);}
+.t-card{transition:all 0.3s ease;}
+.t-card:hover{transform:translateY(-6px);box-shadow:0 15px 35px rgba(0,0,0,0.1);}
+
+</style>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#" class="logo">
+    <img src="logo.png" alt="ගුරුකුල ආයතනය" class="logo-img">
+    <div>
+      <div class="logo-text">ගුරු<span>කුල</span></div>
+      <span class="logo-sub" data-si="අධ්‍යාපන ආයතනය – යටියන" data-en="Education Institute – Yatiyena">අධ්‍යාපන ආයතනය – යටියන</span>
+    </div>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" class="active" data-si="ආයතනය" data-en="About">ආයතනය</a></li>
+      <li><a href="#teachers" data-si="ගුරු මණ්ඩලය" data-en="Teachers">ගුරු මණ්ඩලය</a></li>
+      <li><a href="#timetable" data-si="කාල සටහන" data-en="Timetable">කාල සටහන</a></li>
+      <li><a href="#feedback" data-si="ශිෂ්‍යයන්" data-en="Students">ශිෂ්‍යයන්</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="tel:0776889949" class="nav-cta" data-si="📞 077 688 9949" data-en="📞 077 688 9949">📞 077 688 9949</a></li>
+    </ul>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('si')">සිං</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+    <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-new" id="home">
+  <div class="hero-new-container">
+    <div class="hero-new-left">
+      <div class="hero-badge-top" data-aos="fade-up" data-aos-delay="100">LEARN. GROW. SUCCEED.</div>
+      <h1 data-si="ප්‍රදේශයේ විශිෂ්ටතම <span class='hl'>ගුරු තරු</span> එකම තැනක" data-en="Build Skills. <span class='hl'>Achieve Goals.</span>" data-aos="fade-up" data-aos-delay="250">ප්‍රදේශයේ විශිෂ්ටතම <span class='hl'>ගුරු තරු</span> එකම තැනක</h1>
+      <p data-si="ශ්‍රේණිය 1 සිට 11 දක්වා · ප්‍රතිඵල තුළින් ම ගොඩ නැගුණු විශ්වාසය" data-en="Grade 1 to 11 · Built on trust through results." data-aos="fade-up" data-aos-delay="400">ශ්‍රේණිය 1 සිට 11 දක්වා · ප්‍රතිඵල තුළින් ම ගොඩ නැගුණු විශ්වාසය</p>
+      
+      <div class="hero-actions" data-aos="fade-up" data-aos-delay="550">
+        <a href="#timetable" class="btn-primary" data-si="📅 කාල සටහන" data-en="📅 Timetable">📅 කාල සටහන</a>
+        <a href="tel:0776889949" class="btn-secondary" data-si="📞 077 688 9949" data-en="📞 077 688 9949">📞 077 688 9949</a>
+      </div>
+
+      <div class="hero-learners" data-aos="fade-up" data-aos-delay="700">
+        <div class="learner-avatars">
+          <div class="learner-av" style="background:#ea580c;">NW</div>
+          <div class="learner-av" style="background:#1a3a8f;">SK</div>
+          <div class="learner-av" style="background:#059669;">RM</div>
+          <div class="learner-av" style="background:#7c3aed;">KP</div>
+          <div class="learner-av" style="background:#0891b2;">TD</div>
+        </div>
+        <div class="learner-text">
+          <strong data-si="500+ ශිෂ්‍යයන්" data-en="500+ Students">500+ ශිෂ්‍යයන්</strong>
+          <span data-si="ගුරුකුල සමඟ ඉගෙනගන්නවා" data-en="Learning with Gurukula">ගුරුකුල සමඟ ඉගෙනගන්නවා</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="hero-new-right" data-aos="fade-left">
+      <div class="hero-bg-shape"></div>
+      <div class="hero-bg-shape2"></div>
+      <div class="hero-img-wrapper">
+        <img src="hero-girl.png" alt="Graduation Student" class="main-hero-img" onerror="this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000&auto=format&fit=crop'; this.onerror=null;">
+      </div>
+
+      <div class="floating-badge fb-top">
+        <div class="fb-icon" style="background:#fef3c7;">🏆</div>
+        <div class="fb-text">
+          <strong data-si="100% ප්‍රතිඵල" data-en="100% Results">100% ප්‍රතිඵල</strong>
+          <span data-si="ශිෂ්‍ය සාර්ථකත්වය" data-en="Student success rate">ශිෂ්‍ය සාර්ථකත්වය</span>
+        </div>
+      </div>
+
+      <div class="floating-badge fb-mid">
+        <div class="fb-icon" style="background:#dbeafe;">📚</div>
+        <div class="fb-text">
+          <strong data-si="17+ ගුරුවරු" data-en="17+ Teachers">17+ ගුරුවරු</strong>
+          <span data-si="විෂය විශේෂඥයන්" data-en="Subject specialists">විෂය විශේෂඥයන්</span>
+        </div>
+      </div>
+
+      <div class="floating-badge fb-bottom">
+        <div class="fb-icon" style="background:#d1fae5;">🎓</div>
+        <div class="fb-text">
+          <strong data-si="ශ්‍රේණිය 1-11" data-en="Grade 1-11">ශ්‍රේණිය 1-11</strong>
+          <span data-si="සිංහල + ඉංග්‍රීසි" data-en="Sinhala + English">සිංහල + ඉංග්‍රීසි</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar" data-aos="fade-up" data-aos-delay="200">
+  <div class="stat">
+    <div class="stat-icon">👨‍🏫</div>
+    <div class="stat-num" data-target="20">0</div>
+    <div class="stat-label" data-si="දක්ෂ ගුරුවරු" data-en="Expert Teachers">දක්ෂ ගුරුවරු</div>
+  </div>
+  <div class="stat">
+    <div class="stat-icon">🎓</div>
+    <div class="stat-num" data-target="11">0</div>
+    <div class="stat-label" data-si="ශ්‍රේණි ආවරණය" data-en="Grades Covered">ශ්‍රේණි ආවරණය</div>
+  </div>
+  <div class="stat">
+    <div class="stat-icon">📚</div>
+    <div class="stat-num" data-target="12">0</div>
+    <div class="stat-label" data-si="විෂයයන්" data-en="Subjects">විෂයයන්</div>
+  </div>
+  <div class="stat">
+    <div class="stat-icon">🏆</div>
+    <div class="stat-num" data-target="100">0</div>
+    <div class="stat-label" data-si="ප්‍රතිඵල කේන්ද්‍රීය" data-en="Results Focused">ප්‍රතිඵල කේන්ද්‍රීය</div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="features" id="about">
+  <div class="feature-grid">
+    <div class="feature-card" data-aos="fade-up">
+      <div style="font-size:2.5rem; margin-bottom:1rem;">🏆</div>
+      <h3 data-si="ප්‍රතිඵල කේන්ද්‍රීය ඉගෙනීම" data-en="Results-Focused Learning">ප්‍රතිඵල කේන්ද්‍රීය ඉගෙනීම</h3>
+      <p data-si="ප්‍රතිඵල තුළින් ම ගොඩ නැගුණු ගුරු මණ්ඩලයක් සහිතව ශිෂ්‍යයාගේ ඉලක්ක කරා ළඟා වීම අපේ ප්‍රධාන අරමුණ." data-en="Our primary goal is to reach your targets with a teacher panel proven through results.">ප්‍රතිඵල තුළින් ම ගොඩ නැගුණු ගුරු මණ්ඩලයක් සහිතව ශිෂ්‍යයාගේ ඉලක්ක කරා ළඟා වීම අපේ ප්‍රධාන අරමුණ.</p>
+      <ul class="feature-list">
+        <li data-si="🎯 Past Paper හා Model Paper ආවරණය" data-en="🎯 Past Paper &amp; Model Paper Coverage">🎯 Past Paper හා Model Paper ආවරණය</li>
+        <li data-si="📊 සෑම ශිෂ්‍යයෙකුටම පෞද්ගලික අවධානය" data-en="📊 Personal attention for every student">📊 සෑම ශිෂ්‍යයෙකුටම පෞද්ගලික අවධානය</li>
+        <li data-si="✅ A/B Pass ඉලක්ක කරගත් ඉගෙනීමේ ක්‍රමවේදය" data-en="✅ Teaching method targeting A/B Pass">✅ A/B Pass ඉලක්ක කරගත් ඉගෙනීමේ ක්‍රමවේදය</li>
+        <li data-si="📈 ප්‍රගතිය නිරන්තරයෙන් ප්‍රශ්නෝත්තර ලෙස පරීක්ෂා කිරීම" data-en="📈 Progress checked continuously through Q&amp;A">📈 ප්‍රගතිය නිරන්තරයෙන් ප්‍රශ්නෝත්තර ලෙස පරීක්ෂා කිරීම</li>
+      </ul>
+    </div>
+    <div class="feature-card glow">
+      <div style="font-size:2.5rem; margin-bottom:1rem;">🌟</div>
+      <h3 data-si="ශිෂ්‍යයාගේ අභිලාෂ ජය ගන්නා අධ්‍යාපනය" data-en="Education That Achieves Your Goals">ශිෂ්‍යයාගේ අභිලාෂ ජය ගන්නා අධ්‍යාපනය</h3>
+      <p data-si="ශිෂ්‍යයාගේ සාර්ථකත්වය කෙරෙහි අවධානය යොමු කරමින්, ගුරුකුල ආයතනය ඔබේ සම්පූර්ණ හැකියාව ළඟා ගැනීමට සහ අධ්‍යයනශීලී ලෙස විශිෂ්ටත්වය ලැබීමට ව්‍යක්ත මඟ පෙන්වීම ලබා දෙයි." data-en="With a focus on student success, Gurukula provides personalized guidance to help you reach your full potential and excel academically.">ශිෂ්‍යයාගේ සාර්ථකත්වය කෙරෙහි අවධානය යොමු කරමින්, ගුරුකුල ආයතනය ඔබේ සම්පූර්ණ හැකියාව ළඟා ගැනීමට සහ අධ්‍යයනශීලී ලෙස විශිෂ්ටත්වය ලැබීමට ව්‍යක්ත මඟ පෙන්වීම ලබා දෙයි.</p>
+      <ul class="feature-list">
+        <li data-si="🧠 Concept-based ඉගෙනවා දීමේ ක්‍රමය" data-en="🧠 Concept-based teaching method">🧠 Concept-based ඉගෙනවා දීමේ ක්‍රමය</li>
+        <li data-si="🗣️ Q&amp;A සහ Interactive Sessions" data-en="🗣️ Q&amp;A and Interactive Sessions">🗣️ Q&amp;A සහ Interactive Sessions</li>
+        <li data-si="📚 සිංහල සහ English Medium — දෙකම" data-en="📚 Both Sinhala and English Medium">📚 සිංහල සහ English Medium — දෙකම</li>
+        <li data-si="💬 ශිෂ්‍යයා නිදහසේ ප්‍රශ්න කළ හැකි පරිසරයක්" data-en="💬 A free environment for students to ask questions">💬 ශිෂ්‍යයා නිදහසේ ප්‍රශ්න කළ හැකි පරිසරයක්</li>
+        <li data-si="🏅 ශිෂ්‍යත්ව සිට O/L දක්වා විශේෂ ශ්‍රේණි" data-en="🏅 Special grades from Scholarship to O/L">🏅 ශිෂ්‍යත්ව සිට O/L දක්වා විශේෂ ශ්‍රේණි</li>
+      </ul>
+    </div>
+    <div class="feature-card" data-aos="fade-up">
+      <div style="font-size:2.5rem; margin-bottom:1rem;">🎓</div>
+      <h3 data-si="සාර්ථකත්වයේ ගමන් මඟ" data-en="Your Pathway to Success">සාර්ථකත්වයේ ගමන් මඟ</h3>
+      <p data-si="ගුරුකුල ආයතනය ශිෂ්‍යයන් දැනුමෙන් සහ කුශලතාවෙන් සවිබල ගැන්වීමට කැපවී සිටී — ශ්‍රේණිය 1 සිට OL දක්වා ජය ගැනීමට." data-en="Gurukula is dedicated to empowering students with the knowledge and skills they need to thrive — from Grade 1 all the way to O/L excellence.">ගුරුකුල ආයතනය ශිෂ්‍යයන් දැනුමෙන් සහ කුශලතාවෙන් සවිබල ගැන්වීමට කැපවී සිටී — ශ්‍රේණිය 1 සිට OL දක්වා ජය ගැනීමට.</p>
+      <ul class="feature-list">
+        <li data-si="🏫 ශ්‍රේණිය 1 සිට 11 දක්වා සම්පූර්ණ ආවරණය" data-en="🏫 Full coverage from Grade 1 to 11">🏫 ශ්‍රේණිය 1 සිට 11 දක්වා සම්පූර්ණ ආවරණය</li>
+        <li data-si="📐 ගණිතය, විද්‍යාව, සිංහල, ඉංග්‍රීසි, ඉතිහාසය..." data-en="📐 Maths, Science, Sinhala, English, History...">📐 ගණිතය, විද්‍යාව, සිංහල, ඉංග්‍රීසි, ඉතිහාසය...</li>
+        <li data-si="🎵 සංගීතය, නර්තනය, චිත්‍ර කලාව, Zumba" data-en="🎵 Music, Dancing, Art, Zumba">🎵 සංගීතය, නර්තනය, චිත්‍ර කලාව, Zumba</li>
+        <li data-si="💻 ICT, වාණිජ, දෙමළ විශේෂ පන්ති" data-en="💻 ICT, Commerce, Tamil special classes">💻 ICT, වාණිජ, දෙමළ විශේෂ පන්ති</li>
+        <li data-si="🌍 English Medium Science &amp; Maths — Grade 6–11" data-en="🌍 English Medium Science &amp; Maths — Grade 6–11">🌍 English Medium Science &amp; Maths — Grade 6–11</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SPLIT -->
+<section class="about-section">
+  <div class="about-inner">
+    <div class="about-text" data-aos="fade-right">
+      <h2 data-si="ගුරුකුල සමඟ ඔබේ හැකියාව ජය ගන්න!" data-en="Reach Your Potential with Gurukula!">ගුරුකුල සමඟ ඔබේ හැකියාව ජය ගන්න!</h2>
+      <p data-si="ඔබේ ඉගෙනීමේ අත්දැකීම ඉහළ නැංවීමට සහ අධ්‍යයනශීලී ඉලක්ක ළඟා කර ගැනීමට සූදානම්ද? ගුරුකුල ආයතනය යනු කටපාඩම් කිරීමෙන් ඔබ්බට ගිය, ප්‍රායෝගික හා ක්‍රියාකාරකම් පාදක කරගත් ඉගැන්වීම් ක්‍රමවේදයක් භාවිත කරන ප්‍රමුඛතම ආයතනයකි. පළපුරුදු සහ ප්‍රවීණ ගුරු මණ්ඩලයකගේ මඟපෙන්වීම යටතේ 1 ශ්‍රේණියේ සිට 11 ශ්‍රේණිය දක්වා දරුවන්ට තම අධ්‍යයන කටයුතු සාර්ථක කර ගැනීමට උපරිම සහයෝගය මෙහිදී හිමිවේ." data-en="Are you ready to elevate your learning experience and achieve your academic goals? Gurukula is a leading educational institute that utilizes practical, activity-based teaching methods rather than rote learning. Under the guidance of our highly experienced panel of expert teachers, students from Grade 1 to 11 receive the ultimate support to succeed in their academic journeys.">ඔබේ ඉගෙනීමේ අත්දැකීම ඉහළ නැංවීමට සහ අධ්‍යයනශීලී ඉලක්ක ළඟා කර ගැනීමට සූදානම්ද? ගුරුකුල ආයතනය යනු කටපාඩම් කිරීමෙන් ඔබ්බට ගිය, ප්‍රායෝගික හා ක්‍රියාකාරකම් පාදක කරගත් ඉගැන්වීම් ක්‍රමවේදයක් භාවිත කරන ප්‍රමුඛතම ආයතනයකි. පළපුරුදු සහ ප්‍රවීණ ගුරු මණ්ඩලයකගේ මඟපෙන්වීම යටතේ 1 ශ්‍රේණියේ සිට 11 ශ්‍රේණිය දක්වා දරුවන්ට තම අධ්‍යයන කටයුතු සාර්ථක කර ගැනීමට උපරිම සහයෝගය මෙහිදී හිමිවේ.</p>
+      <p data-si="ගුරුකුල ආයතනයේ, සෑම ශ්‍රේණියකටම, සෑම විෂයකටම, ප්‍රශිෂ්ඨ ගුරුවරුන් සහිත පන්ති ලබා ගත හැකිය. විශේෂයෙන්ම 5 ශ්‍රේණිය ශිෂ්‍යත්ව විභාගය, සාමාන්‍ය පෙළ (O/L) විභාගය ඉලක්ක කරගනිමින් විශේෂ ප්‍රශ්න පත්‍ර පන්ති සහ සම්මන්ත්‍රණ මාලාවන් ද, ඉංග්‍රීසි මාධ්‍ය (English Medium) හදාරන සිසුන් සඳහා ගණිතය සහ විද්‍යාව විෂයන්ට අදාළව විශේෂඥ ගුරුවරුන්ගේ මෙහෙයවීම් ද මෙහිදී පැවැත්වේ." data-en="At Gurukula, expert-led classes are available for every grade and every subject. In particular, we offer specialized paper classes and seminar series targeting the Grade 5 Scholarship Exam and G.C.E. Ordinary Level (O/L) exam. Additionally, classes for English Medium Science and Mathematics are conducted under the supervision of subject experts.">ගුරුකුල ආයතනයේ, සෑම ශ්‍රේණියකටම, සෑම විෂයකටම, ප්‍රශිෂ්ඨ ගුරුවරුන් සහිත පන්ති ලබා ගත හැකිය. විශේෂයෙන්ම 5 ශ්‍රේණිය ශිෂ්‍යත්ව විභාගය, සාමාන්œය පෙළ (O/L) විභාගය ඉලක්ක කරගනිමින් විශේෂ ප්‍රශ්න පත්‍ර පන්ති සහ සම්මන්ත්‍රණ මාලාවන් ද, ඉංග්‍රීසි මාධ්‍ය (English Medium) හදාරන සිසුන් සඳහා ගණිතය සහ විද්‍යාව විෂයන්ට අදාළව විශේෂඥ ගුරුවරුන්ගේ මෙහෙයවීම් ද මෙහිදී පැවැත්වේ.</p>
+      <p data-si="අපගේ ඉලක්කය වන්නේ දරුවාගේ විභාග ජයග්‍රහණය පමණක් නොව, ඔවුන් තුළ යහපත් විනයක් සහ කුසලතා වර්ධනය කරමින් අභියෝගවලට සාර්ථකව මුහුණ දිය හැකි පරපුරක් බිහිකිරීමයි. අද ම අප හා සම්බන්ධ වී ඉගෙනීමේ ජය ගමනේ ඊළඟ පියවර තබන්න!" data-en="Our ultimate goal is not only to ensure exam success but also to build a generation capable of facing challenges by developing good discipline and essential skills. Join us today and take the next step toward academic excellence!">අපගේ ඉලක්කය වන්නේ දරුවාගේ විභාග ජයග්‍රහණය පමණක් නොව, ඔවුන් තුළ යහපත් විනයක් සහ කුසලතා වර්ධනය කරමින් අභියෝගවලට සාර්ථකව මුහුණ දිය හැකි පරපුරක් බිහිකිරීමයි. අද ම අප හා සම්බන්ධ වී ඉගෙනීමේ ජය ගමනේ ඊළඟ පියවර තබන්න!</p>
+    </div>
+    <div class="about-img-wrap" data-aos="fade-left">
+      <div class="about-slider">
+        <div class="about-slide active">
+          <img src="slide1.png" alt="ගුරුකුල ආයතනය – යටියන" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="about-slide">
+          <img src="slide2.jpg" alt="සෑම ශ්‍රේණියකටම, සෑම විෂයකටම" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="about-slide">
+          <img src="slide3.png" alt="ශ්‍රේණිය 1 – 11" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+      </div>
+      <div class="about-dots">
+        <div class="about-dot active" onclick="goSlide(0)"></div>
+        <div class="about-dot" onclick="goSlide(1)"></div>
+        <div class="about-dot" onclick="goSlide(2)"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why-section">
+  <div class="why-inner">
+    <div class="sec-header" data-aos="fade-down">
+      <h2 data-si="ඇයි <span>ගුරුකුල</span> ?" data-en="Why <span>Gurukula</span>?">ඇයි <span>ගුරුකුල</span> ?</h2>
+      <p data-si="ශිෂ්‍යයාගේ සාර්ථකත්වය අපේ ජය — ඒ නිසා ගුරුකුල ආයතනය ඔබේ දරුවාට හොඳම තේරීමයි" data-en="Your child's success is our victory — that's why Gurukula is the best choice">ශිෂ්‍යයාගේ සාර්ථකත්වය අපේ ජය — ඒ නිසා ගුරුකුල ආයතනය ඔබේ දරුවාට හොඳම තේරීමයි</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="why-grid">
+
+      <!-- Card 1 -->
+      <div class="why-card why-card-1" data-aos="fade-up" data-aos-delay="0">
+        <div class="why-icon-wrap" style="background:#fff7ed;">🏫</div>
+        <h4 data-si="භෞතික පන්ති — සෘජු ඉගෙනීම" data-en="Physical Classes — Direct Learning">භෞතික පන්ති — සෘජු ඉගෙනීම</h4>
+        <p data-si="ගුරු-ශිෂ්‍ය සෘජු සම්බන්ධතාවය, ප්‍රශ්නෝත්තර, ක්ෂණික ගැලවීම. ඔබේ දරුවා ඕනෑකමින් ලිඛිතව හා කිතු කරමින් ඉගෙනගනී. කිසිම ශිෂ්‍යයෙකු රාශියෙකු නොවෙයි — සෑම කෙනෙකුටම අවධානය ලබා දේ." data-en="Direct teacher-student interaction, Q&A sessions, and instant problem solving. Every student gets personal attention — not just a number in a crowd.">ගුරු-ශිෂ්‍ය සෘජු සම්බන්ධතාවය, ප්‍රශ්නෝත්තර, ක්ෂණික ගැලවීම. ඔබේ දරුවා ඕනෑකමින් ලිඛිතව හා කිතු කරමින් ඉගෙනගනී. කිසිම ශිෂ්‍යයෙකු රාශියෙකු නොවෙයි — සෑම කෙනෙකුටම අවධානය ලබා දේ.</p>
+        <span class="why-tag" style="background:#fff7ed;color:#ea580c;">Physical · Yatiyena</span>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="why-card why-card-2" data-aos="fade-up" data-aos-delay="100">
+        <div class="why-icon-wrap" style="background:#eff6ff;">📚</div>
+        <h4 data-si="සම්පූර්ණ විෂය ආවරණය" data-en="Complete Subject Coverage">සම්පූර්ණ විෂය ආවරණය</h4>
+        <p data-si="ශ්‍රේණිය 1–11 දක්වා ගණිතය, විද්‍යාව, සිංහල, ඉංග්‍රීසි, ඉතිහාසය, ICT, දෙමළ, වාණිජ, සංගීතය, නර්තනය, චිත්‍ර, Zumba — ඕනෑම විෂයකට දක්ෂ ගුරුවරයෙකු සිටී. ශිෂ්‍යයාට ආයතනයෙන් ඔබ්බ ගිය අධ්‍යාපනය නොඕනෑ." data-en="Grade 1–11: Maths, Science, Sinhala, English, History, ICT, Tamil, Commerce, Music, Dance, Art, Zumba — expert teachers for every subject. No need to go anywhere else.">ශ්‍රේණිය 1–11 දක්වා ගණිතය, විද්‍යාව, සිංහල, ඉංග්‍රීසි, ඉතිහාසය, ICT, දෙමළ, වාණිජ, සංගීතය, නර්තනය, චිත්‍ර, Zumba — ඕනෑම විෂයකට දක්ෂ ගුරුවරයෙකු සිටී.</p>
+        <span class="why-tag" style="background:#eff6ff;color:#1a3a8f;">12+ Subjects</span>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="why-card why-card-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="why-icon-wrap" style="background:#d1fae5;">🏆</div>
+        <h4 data-si="ප්‍රතිඵල-කේන්ද්‍රීය ඉගෙනීම" data-en="Results-Centred Learning">ප්‍රතිඵල-කේන්ද්‍රීය ඉගෙනීම</h4>
+        <p data-si="Past Paper හා Model Paper ආවරණය, ප්‍රශ්නෝත්තර, A/B pass ඉලක්ක — ගුරුකුලයෙන් ඉගෙනගත් ශිෂ්‍යයන් 100% ක්ම O/L සාර්ථකව ජය ගෙන ඇත. ප්‍රතිඵල නොලැබුණ නම් ගෙවාගෙන ඉගෙනීම නොකෙරේ." data-en="Past Paper & Model Paper coverage, Q&A, A/B pass targets — 100% of Gurukula students have succeeded at O/L. Results are not just a promise — they are proven.">Past Paper හා Model Paper ආවරණය, ප්‍රශ්නෝත්තර, A/B pass ඉලක්ක — ගුරුකුලයෙන් ඉගෙනගත් ශිෂ්‍යයන් සාර්ථකව O/L ජය ගෙන ඇත.</p>
+        <span class="why-tag" style="background:#d1fae5;color:#059669;">100% Pass Rate</span>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="why-card why-card-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="why-icon-wrap" style="background:#f5f3ff;">🎓</div>
+        <h4 data-si="ශිෂ්‍යත්ව විශේෂ පන්ති" data-en="Scholarship Special Classes">ශිෂ්‍යත්ව විශේෂ පන්ති</h4>
+        <p data-si="ශ්‍රේණිය 4 සහ 5 ශිෂ්‍යයන් සඳහා Ajith Kularathna sir සහ Nilantha Rathnawira sir විසින් හිතකාමීව, ළමා-මනෝවිද්‍යාත්මක ශෛලියෙන් ශිෂ්‍යත්ව විභාගය ජය ගැනීමට විශේෂ සූදානමක් ලබා දෙනු ලැබේ." data-en="Grades 4 & 5 Scholarship special classes by Ajith Kularathna sir and Nilantha Rathnawira sir — child-friendly, activity-based preparation proven to get results.">ශ්‍රේණිය 4 සහ 5 සිසුන් සඳහා Ajith Kularathna sir සහ Nilantha Rathnawira sir විසින් ළමා-හිතකාමී ශෛලියෙන් ශිෂ්‍යත්ව විභාගය සඳහා විශේෂ සූදානම ලබා දේ.</p>
+        <span class="why-tag" style="background:#f5f3ff;color:#7c3aed;">Grades 4 &amp; 5 · Fridays</span>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="why-card why-card-5" data-aos="fade-up" data-aos-delay="100">
+        <div class="why-icon-wrap" style="background:#e0f7fa;">🌍</div>
+        <h4 data-si="English Medium Classes" data-en="English Medium Classes">English Medium Classes</h4>
+        <p data-si="ශ්‍රේණිය 6 සිට 11 දක්වා English Medium Science සහ Maths. Mohamed Fazeem sir (BSc. Eng. Peradeniya) සහ Indika Wimalachandra sir (Nat. Dip. Teaching Science) විසින් ලබා දේ. සිංහල මාධ්‍ය සිසුන්ටත් ඉංග්‍රීසියෙන් ඉගෙනගත හැකිය." data-en="English Medium Science & Maths for Grades 6–11 by Mohamed Fazeem sir (BSc. Eng. Peradeniya) and Indika Wimalachandra sir. Sinhala medium students can also join.">Grade 6–11 English Medium Science &amp; Maths — Mohamed Fazeem sir (BSc. Eng. Peradeniya) සහ Indika Wimalachandra sir. සිංහල මාධ්‍ය ශිෂ්‍යයන්ටත් සම්බන්ධ විය හැකිය.</p>
+        <span class="why-tag" style="background:#e0f7fa;color:#0891b2;">🇬🇧 English Medium</span>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="why-card why-card-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="why-icon-wrap" style="background:#fce7f3;">🎵</div>
+        <h4 data-si="කලා හා ශාරීරික ක්‍රියාකාරකම්" data-en="Arts & Physical Activities">කලා හා ශාරීරික ක්‍රියාකාරකම්</h4>
+        <p data-si="සංගීතය, නර්තනය, චිත්‍ර කලාව, Zumba — දරුවාගේ සම්පූර්ණ වර්ධනය සඳහා. ශ්‍රේණිය 6 සිට ලබා ගත හැකිය. Hemantha Liyanapathirana sir (සංගීතය), Namal Weeraddeniya (නර්තනය), Mahesh Gamage (චිත්‍ර), Pubudu/Dilrukshi (Zumba)." data-en="Music, Dancing, Art, Zumba — for the complete development of your child. Available from Grade 6. Hemantha sir (Music), Namal (Dance), Mahesh (Art), Pubudu/Dilrukshi (Zumba).">සංගීතය, නර්තනය, චිත්‍ර, Zumba — ශ්‍රේණිය 6+ සිසුන් සඳහා. දරුවාගේ ශාරීරික, මානසික සහ නිර්මාණශීලී වර්ධනය සඳහා.</p>
+        <span class="why-tag" style="background:#fce7f3;color:#db2777;">Music · Dance · Art · Zumba</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TEACHERS CAROUSEL -->
+<section class="carousel-section" id="teachers">
+  <div class="carousel-inner">
+    <div class="sec-header" data-aos="fade-down">
+      <h2 data-si="අපේ <span>ප්‍රධාන ගුරුවරුන්</span>" data-en="Our <span>Key Educators</span>">අපේ <span>ප්‍රධාන ගුරුවරුන්</span></h2>
+      <p data-si="ප්‍රදේශයේ විශිෂ්ටතම ගුරු මණ්ඩලය" data-en="The most outstanding panel of teachers in the area">ප්‍රදේශයේ විශිෂ්ටතම ගුරු මණ්ඩලය</p>
+      <div class="divider"></div>
+    </div>
+    <div class="carousel-wrap">
+      <div class="carousel-track" id="carTrack"></div>
+      <button class="car-btn prev" onclick="carMove(-1)">&#10094;</button>
+      <button class="car-btn next" onclick="carMove(1)">&#10095;</button>
+    </div>
+    <div class="car-dots" id="carDots"></div>
+  </div>
+</section>
+
+<!-- ALL TEACHERS GRID -->
+<section class="all-teachers-section" id="all-teachers">
+  <div class="carousel-inner">
+    <div class="sec-header" data-aos="fade-down">
+      <h2 data-si="සියලුම <span>ගුරුවරුන්</span>" data-en="All <span>Teachers</span>">සියලුම <span>ගුරුවරුන්</span></h2>
+      <p data-si="විෂය අනුව ගුරුවරුන් තෝරාගන්න" data-en="Select teachers by subject">විෂය අනුව ගුරුවරුන් තෝරාගන්න</p>
+      <div class="divider"></div>
+    </div>
+    <div class="grade-tabs" style="margin-bottom: 2rem;">
+      <button class="gtab active" onclick="filterTeachers('All', this)" data-si="සියලුම" data-en="All">සියලුම</button>
+      <button class="gtab" onclick="filterTeachers('Maths', this)" data-si="ගණිතය" data-en="Maths">ගණිතය</button>
+      <button class="gtab" onclick="filterTeachers('Science', this)" data-si="විද්‍යාව" data-en="Science">විද්‍යාව</button>
+      <button class="gtab" onclick="filterTeachers('English', this)" data-si="ඉංග්‍රීසි" data-en="English">ඉංග්‍රීසි</button>
+      <button class="gtab" onclick="filterTeachers('Sinhala', this)" data-si="සිංහල" data-en="Sinhala">සිංහල</button>
+      <button class="gtab" onclick="filterTeachers('History', this)" data-si="ඉතිහාසය" data-en="History">ඉතිහාසය</button>
+      <button class="gtab" onclick="filterTeachers('ICT', this)" data-si="ICT" data-en="ICT">ICT</button>
+    </div>
+    <div class="teachers-grid" id="teachersGrid"></div>
+  </div>
+</section>
+
+<!-- TIMETABLE -->
+<section class="tt-section" id="timetable">
+  <div class="tt-inner">
+    <div class="sec-header" data-aos="fade-down">
+      <h2 data-si="පන්ති <span>කාලසටහන</span>" data-en="Class <span>Time Table</span>">පන්ති <span>කාලසටහන</span></h2>
+      <p data-si="ඔබේ ශ්‍රේණිය තෝරා පන්ති වේලාවන් සොයාගන්න" data-en="Select your grade and find class times">ඔබේ ශ්‍රේණිය තෝරා පන්ති වේලාවන් සොයාගන්න</p>
+      <div class="divider"></div>
+    </div>
+    <div class="grade-tabs">
+      <button class="gtab active" onclick="showGrade(6, this)" data-si="6 ශ්‍රේණිය" data-en="Grade 6">6 ශ්‍රේණිය</button>
+      <button class="gtab" onclick="showGrade(7, this)" data-si="7 ශ්‍රේණිය" data-en="Grade 7">7 ශ්‍රේණිය</button>
+      <button class="gtab" onclick="showGrade(8, this)" data-si="8 ශ්‍රේණිය" data-en="Grade 8">8 ශ්‍රේණිය</button>
+      <button class="gtab" onclick="showGrade(9, this)" data-si="9 ශ්‍රේණිය" data-en="Grade 9">9 ශ්‍රේණිය</button>
+      <button class="gtab" onclick="showGrade(10, this)" data-si="10 ශ්‍රේණිය" data-en="Grade 10">10 ශ්‍රේණිය</button>
+      <button class="gtab" onclick="showGrade(11, this)" data-si="11 ශ්‍රේණිය" data-en="Grade 11">11 ශ්‍රේණිය</button>
+    </div>
+    <div class="tt-grid" id="ttGrid"></div>
+    
+    <div class="em-strip" data-aos="zoom-in">
+      <div class="em-text">
+        <h4 data-si="🇬🇧 English Medium Science & Maths" data-en="🇬🇧 English Medium Science & Maths">🇬🇧 English Medium Science & Maths</h4>
+        <p data-si="Grade 6 to 11 (Mohamed Fazeem | Indika Wimalachandra)" data-en="Grade 6 to 11 (Mohamed Fazeem | Indika Wimalachandra)">Grade 6 to 11 (Mohamed Fazeem | Indika Wimalachandra)</p>
+      </div>
+      <div class="em-badge" data-si="ඉංග්‍රීසි මාධ්‍ය පන්ති" data-en="English Medium Classes">ඉංග්‍රීසි මාධ්‍ය පන්ති</div>
+    </div>
+  </div>
+</section>
+
+<!-- FEEDBACK -->
+<section class="fb-section" id="feedback">
+  <div class="fb-inner">
+    <div class="sec-header" data-aos="fade-down">
+      <h2 data-si="ශිෂ්‍ය <span>අදහස්</span>" data-en="Student <span>Reviews</span>">ශිෂ්‍ය <span>අදහස්</span></h2>
+      <p data-si="අපේ ශිෂ්‍යයන් කියන දේ" data-en="What our students say">අපේ ශිෂ්‍යයන් කියන දේ</p>
+      <div class="divider"></div>
+    </div>
+    <div class="fb-grid">
+      <div class="fb-card">
+        <div class="fb-user"><div class="fb-av av-b">NW</div><div><div class="fb-name">නුවන් විජේසේකර</div><div class="fb-school">යටියන මහා විද්‍යාලය</div></div></div>
+        <div class="fb-stars">★★★★★</div>
+        <p class="fb-text" data-si="ගුරුකුල අධ්‍යාපන ආයතනය මගේ ජීවිතයේ ලොකුම හැරවුම් ලක්ෂ්‍යය වුණා කිව්වොත් නිවැරදියි. විශේෂයෙන්ම නලින් සර්ගේ ගණිතය පන්තිය නිසා මට ගණිතය විෂයට තිබුණු බය සම්පූර්ණයෙන්ම නැති වෙලා ගියා. සර් සිද්ධාන්ත පැහැදිලි කරලා දෙන ආකාරය, නිරන්තරයෙන් ප්‍රශ්න පත්‍ර සාකච්ඡා කිරීම සහ පසුගිය විභාග ප්‍රශ්න පත්‍ර විශාල ප්‍රමාණයක් ආවරණය කිරීම නිසා විෂය පිළිබඳව මනා අවබෝධයක් ලැබුණා. 9 ශ්‍රේණියේ ඉඳලා මේ පන්තියට සහභාගි වුණු නිසා සාමාන්‍ය පෙළ විභාගයෙන් ගණිතය විෂයට 'A' සාමාර්ථයක් ලබාගෙන, උසස් පෙළ විද්‍යා අංශයෙන් හැදෑරීමට අවශ්‍ය මඟ පෙන්වීම සහ ධෛර්යය මට මේ ආයතනයෙන් උපරිමයෙන්ම ලැබුණා." data-en="Gurukula Education Institute was the biggest turning point in my academic life. Nalin sir's maths class is exceptional. The way he explains concepts, the Q&A sessions, past paper coverage — all of top quality. The fear I had for maths completely disappeared. The classes I joined from Grade 9 helped me score an A in O/L Maths and gave me the courage to pursue science for my A/Ls.">ගුරුකුල අධ්‍යාපන ආයතනය මගේ ජීවිතයේ ලොකුම හැරවුම් ලක්ෂ්‍යය වුණා කිව්වොත් නිවැරදියි. විශේෂයෙන්ම නලින් සර්ගේ ගණිතය පන්තිය නිසා මට ගණිතය විෂයට තිබුණු බය සම්පූර්ණයෙන්ම නැති වෙලා ගියා. සර් සිද්ධාන්ත පැහැදිලි කරලා දෙන ආකාරය, නිරන්තරයෙන් ප්‍රශ්න පත්‍ර සාකච්ඡා කිරීම සහ පසුගිය විභාග ප්‍රශ්න පත්‍ර විශාල ප්‍රමාණයක් ආවරණය කිරීම නිසා විෂය පිළිබඳව මනා අවබෝධයක් ලැබුණා. 9 ශ්‍රේණියේ ඉඳලා මේ පන්තියට සහභාගි වුණු නිසා සාමාන්‍ය පෙළ විභාගයෙන් ගණිතය විෂයට 'A' සාමාර්ථයක් ලබාගෙන, උසස් පෙළ විද්‍යා අංශයෙන් හැදෑරීමට අවශ්‍ය මඟ පෙන්වීම සහ ධෛර්යය මට මේ ආයතනයෙන් උපරිමයෙන්ම ලැබුණා.</p>
+      </div>
+      <div class="fb-card">
+        <div class="fb-user"><div class="fb-av av-r">SK</div><div><div class="fb-name">සාරා කවීෂා</div><div class="fb-school">යටියන ශාන්ත මරියා කන්‍යාරාමය</div></div></div>
+        <div class="fb-stars">★★★★★</div>
+        <p class="fb-text" data-si="ගුරුකුල ආයතනයේ පැවැත්වෙන 5 ශ්‍රේණිය ශිෂ්‍යත්ව පන්තිය ඇත්තෙන්ම විශිෂ්ටයි. අජිත් සර් සහ නිලන්ත සර් දරුවන්ගේ මට්ටමට ගැලපෙන ආකාරයට ඉතාමත් ආදරයෙන් සහ කරුණාවෙන් උගන්වනවා. ළමා මනෝවිද්‍යාවට අනුකූලව දරුවන්ට කිසිම වෙහෙසක් හෝ කම්මැලිකමක් නොදැනෙන අයුරින් ක්‍රියාකාරකම් ඇසුරින් විෂය කරුණු කියා දෙන නිසා දරුවන් පන්තියට යාමට ඉතා උනන්දු වෙනවා. පන්තියේ විනය මෙන්ම අධීක්ෂණයත් ඉතා ඉහළයි. මේ නිසාම මගේ දරුවාගේ ශිෂ්‍යත්ව ලකුණු මට්ටම බෙහෙවින් ඉහළ ගිය අතර විභාගය ඉතා සාර්ථකව ජය ගැනීමට හැකි වුණා." data-en="The Grade 5 scholarship class is truly excellent. Ajith sir and Nilantha sir teach in a way that really connects with children. They understand child psychology too. They make learning engaging and never boring. The discipline in class is great. The scholarship marks improved greatly — these two teachers played a huge role in that success.">ගුරුකුල ආයතනයේ පැවැත්වෙන 5 ශ්‍රේණිය ශිෂ්‍යත්ව පන්තිය ඇත්තෙන්ම විශිෂ්ටයි. අජිත් සර් සහ නිලන්ත සර් දරුවන්ගේ මට්ටමට ගැලපෙන ආකාරයට ඉතාමත් ආදරයෙන් සහ කරුණාවෙන් උගන්වනවා. ළමා මනෝවිද්‍යාවට අනුකූලව දරුවන්ට කිසිම වෙහෙසක් හෝ කම්මැලිකමක් නොදැනෙන අයුරින් ක්‍රියාකාරකම් ඇසුරින් විෂය කරුණු කියා දෙන නිසා දරුවන් පන්තියට යාමට ඉතා උනන්දු වෙනවා. පන්තියේ විනය මෙන්ම අධීක්ෂණයත් ඉතා ඉහළයි. මේ නිසාම මගේ දරුවාගේ ශිෂ්‍යත්ව ලකුණු මට්ටම බෙහෙවින් ඉහළ ගිය අතර විභාගය ඉතා සාර්ථකව ජය ගැනීමට හැකි වුණා.</p>
+      </div>
+      <div class="fb-card">
+        <div class="fb-user"><div class="fb-av av-g">RM</div><div><div class="fb-name">රවිනු මදුශාන්</div><div class="fb-school">මිනුවන්ගොඩ නාලන්දා මධ්‍ය මහා විද්‍යාලය</div></div></div>
+        <div class="fb-stars">★★★★★</div>
+        <p class="fb-text" data-si="මම සහභාගි වුණේ මොහොමඩ් සර්ගේ ඉංග්‍රීසි මාධ්‍ය විද්‍යාව පන්තියටයි. සාමාන්‍යයෙන් සිංහල මාධ්‍ය පාසලක සිට පැමිණෙන දරුවෙකුට ඉංග්‍රීසි මාධ්‍යයෙන් විද්‍යාව සහ ගණිතය හැදෑරීම තරමක් අපහසු කාර්යයක් වුණත්, මොහොමඩ් සර් විෂය කරුණු ඉතාමත් සරලව සහ පැහැදිලිව ඉංග්‍රීසි භාෂාවෙන් කියා දෙන නිසා කිසිම අපහසුවක් දැනුණේ නැහැ. අමාරු විෂය කොටස් පවා ප්‍රායෝගිකව සහ දෘශ්‍ය මාධ්‍ය ඇසුරින් සර් පැහැදිලි කරන ආකාරය විශිෂ්ටයි. මේ නිසා සාමාන්‍ය පෙළ විභාගයෙන් විශිෂ්ට ජයක් ලබා ගැනීමටත්, උසස් පෙළ සඳහා ශක්තිමත් පදනමක් ගොඩනඟා ගැනීමටත් මට හැකි වුණා." data-en="I attend Mohamed sir's English Medium Science class. He explains concepts in English very clearly and comfortably. It's tough for a student from a Sinhala medium school to follow English medium science — but Mohamed sir's method made it easy to progress without that being a barrier. I've built a strong foundation for A/Ls.">මම සහභාගි වුණේ මොහොමඩ් සර්ගේ ඉංග්‍රීසි මාධ්‍ය විද්‍යාව පන්තියටයි. සාමාන්‍යයෙන් සිංහල මාධ්‍ය පාසලක සිට පැමිණෙන දරුවෙකුට ඉංග්‍රීසි මාධ්‍යයෙන් විද්‍යාව සහ ගණිතය හැදෑරීම තරමක් අපහසු කාර්යයක් වුණත්, මොහොමඩ් සර් විෂය කරුණු ඉතාමත් සරලව සහ පැහැදිලිව ඉංග්‍රීසි භාෂාවෙන් කියා දෙන නිසා කිසිම අපහසුවක් දැනුණේ නැහැ. අමාරු විෂය කොටස් පවා ප්‍රායෝගිකව සහ දෘශ්‍ය මාධ්‍ය ඇසුරින් සර් පැහැදිලි කරන ආකාරය විශිෂ්ටයි. මේ නිසා සාමාන්‍ය පෙළ විභාගයෙන් විශිෂ්ට ජයක් ලබා ගැනීමටත්, උසස් පෙළ සඳහා ශක්තිමත් පදනමක් ගොඩනඟා ගැනීමටත් මට හැකි වුණා.</p>
+      </div>
+      <div class="fb-card">
+        <div class="fb-user"><div class="fb-av av-p">KP</div><div><div class="fb-name">කවිෂා පෙරේරා</div><div class="fb-school">රත්නාවලී බාලිකා විද්‍යාලය, ගම්පහ</div></div></div>
+        <div class="fb-stars">★★★★★</div>
+        <p class="fb-text" data-si="සදාමාලි මිස්ගේ ඉංග්‍රීසි භාෂාව පන්තිය පිළිබඳව මට කියන්න තියෙන්නේ ඉතාමත් ඉහළ අදහසක්. මිස් උගන්වන ක්‍රමවේදය අතිශයින්ම සුවිශේෂී වන අතර ව්‍යාකරණ, රචනා ලිවීම සහ කථන හැකියාව වැනි සෑම අංශයක්ම ඉතා ක්‍රමානුකූලව ආවරණය කරනවා. සාමාන්‍ය පෙළ ඉංග්‍රීසි විෂය පිළිබඳව මට තිබුණේ විශාල බියක් වුණත්, පන්තියට සහභාගි වීමෙන් පසු මගේ ආත්මවිශ්වාසය බෙහෙවින් වැඩි වුණා. අවසානයේදී සාමාන්‍ය පෙළ විභාගයෙන් ඉංග්‍රීසි විෂයට 'A' සාමාර්ථයක් ලබා ගැනීමට මට හැකි වූයේ මිස්ගේ අප්‍රතිහත කැපවීම නිසයි." data-en="There's so much to say about Sadamali miss's English class. Her teaching style is truly unique. Grammar, writing, speaking — everything is covered methodically. I used to be very scared of O/L English. But after starting her class, that fear disappeared completely. I scored an A in O/L English — a huge achievement.">සදාමාලි මිස්ගේ ඉංග්‍රීසි භාෂාව පන්තිය පිළිබඳව මට කියන්න තියෙන්නේ ඉතාමත් ඉහළ අදහසක්. මිස් උගන්වන ක්‍රමවේදය අතිශයින්ම සුවිශේෂී වන අතර ව්‍යාකරණ, රචනා ලිවීම සහ කථන හැකියාව වැනි සෑම අංශයක්ම ඉතා ක්‍රමානුකූලව ආවරණය කරනවා. සාමාන්‍ය පෙළ ඉංග්‍රීසි විෂය පිළිබඳව මට තිබුණේ විශාල බියක් වුණත්, පන්තියට සහභාගි වීමෙන් පසු මගේ ආත්මවිශ්වාසය බෙහෙවින් වැඩි වුණා. අවසානයේදී සාමාන්‍ය පෙළ විභාගයෙන් ඉංග්‍රීසි විෂයට 'A' සාමාර්ථයක් ලබා ගැනීමට මට හැකි වූයේ මිස්ගේ අප්‍රතිහත කැපවීම නිසයි.</p>
+      </div>
+      <div class="fb-card">
+        <div class="fb-user"><div class="fb-av av-o">TD</div><div><div class="fb-name">තිළිණ දිසානායක</div><div class="fb-school">බණ්ඩාරනායක විද්‍යාලය, ගම්පහ</div></div></div>
+        <div class="fb-stars">★★★★★</div>
+        <p class="fb-text" data-si="සනෝද්‍යා මිස් ළඟ තමයි මම තොරතුරු හා සන්නිවේදන තාක්ෂණය (ICT) පන්තියට සහභාගි වුණේ. මිස් උගන්වන්නේ තියරි විතරක් නෙවෙයි, පරිගණක ප්‍රායෝගික ක්‍රියාකාරකම්වලට මුල් තැන දෙමින්. විභාග ප්‍රශ්න පත්‍ර රටාවන් සහ ප්‍රශ්නවලට පිළිතුරු සපයන ආකාරය ඉතා සියුම්ව කියා දෙනවා. සාමාන්‍ය පෙළ විභාගයේදී එම උපක්‍රම මට බෙහෙවින් උපකාරී වුණා. මට ICT විෂය සඳහා 'A' සාමාර්ථයක් ලබා ගැනීමට හැකි වුණේ මිස්ගෙන් ලැබුණු විශිෂ්ට මඟ පෙන්වීම නිසයි." data-en="I take ICT class with Sanodaya miss. Her teaching style is very practical — not just theory but hands-on computer work too. She covers O/L ICT paper patterns in depth. The exam writing strategies I learned from her were a huge advantage. Scoring an A in ICT was possible thanks to her guidance.">සනෝද්‍යා මිස් ළඟ තමයි මම තොරතුරු හා සන්නිවේදන තාක්ෂණය (ICT) පන්තියට සහභාගි වුණේ. මිස් උගන්වන්නේ තියරි විතරක් නෙවෙයි, පරිගණක ප්‍රායෝගික ක්‍රියාකාරකම්වලට මුල් තැන දෙමින්. විභාග ප්‍රශ්න පත්‍ර රටාවන් සහ ප්‍රශ්නවලට පිළිතුරු සපයන ආකාරය ඉතා සියුම්ව කියා දෙනවා. සාමාන්‍ය පෙළ විභාගයේදී එම උපක්‍රම මට බෙහෙවින් උපකාරී වුණා. මට ICT විෂය සඳහා 'A' සාමාර්ථයක් ලබා ගැනීමට හැකි වුණේ මිස්ගෙන් ලැබුණු විශිෂ්ට මඟ පෙන්වීම නිසයි.</p>
+      </div>
+      <div class="fb-card">
+        <div class="fb-user"><div class="fb-av av-t">AM</div><div><div class="fb-name">අනූෂ මෙන්ඩිස්</div><div class="fb-school">මිනුවන්ගොඩ ජනාධිපති විද්‍යාලය</div></div></div>
+        <div class="fb-stars">★★★★★</div>
+        <p class="fb-text" data-si="මම ඉංග්‍රීසි මාධ්‍යයෙන් විද්‍යාව විෂය හැදෑරුවේ ඉන්දික සර් ළඟයි. සර් රූප සටහන්, ප්‍රායෝගික පරීක්ෂණ සහ සිද්ධාන්ත ඉතාමත් පැහැදිලිව සහ ආකර්ශනීය ලෙස දෘශ්‍යමාන කරමින් උගන්වනවා. ඉංග්‍රීසි මාධ්‍යයෙන් ඉගෙන ගන්නා සිසුන්ට ගැලපෙන ආකාරයට විෂය කරුණු පහදා දීම සර්ගේ සුවිශේෂී දක්ෂතාවයක්. පසුගිය විභාග ප්‍රශ්න පත්‍ර සාකච්ඡා කරමින් විභාගයට මුහුණ දෙන ආකාරය ගැන සර් ලබා දුන් පුහුණුව මගේ සාර්ථකත්වයට බෙහෙවින් උපකාරී වුණා." data-en="I attend Indika sir's Science class as an English medium student. Sir's explanations are incredibly clear. Diagrams, experiments, theory — all presented very visually. The way he explains for English medium students is truly special. He also pays great attention to O/L Science paper writing techniques.">මම ඉංග්‍රීසි මාධ්‍යයෙන් විද්‍යාව විෂය හැදෑරුවේ ඉන්දික සර් ළඟයි. සර් රූප සටහන්, ප්‍රායෝගික පරීක්ෂණ සහ සිද්ධාන්ත ඉතාමත් පැහැදිලිව සහ ආකර්ශනීය ලෙස දෘශ්‍යමාන කරමින් උගන්වනවා. ඉංග්‍රීසි මාධ්‍යයෙන් ඉගෙන ගන්නා සිසුන්ට ගැලපෙන ආකාරයට විෂය කරුණු පහදා දීම සර්ගේ සුවිශේෂී දක්ෂතාවයක්. පසුගිය විභාග ප්‍රශ්න පත්‍ර සාකච්ඡා කරමින් විභාගයට මුහුණ දෙන ආකාරය ගැන සර් ලබා දුන් පුහුණුව මගේ සාර්ථකත්වයට බෙහෙවින් උපකාරී වුණා.</p>
+      </div>
+      <div class="fb-card">
+        <div class="fb-user"><div class="fb-av av-pk">PS</div><div><div class="fb-name">පවිත්‍රා සේනාරත්න</div><div class="fb-school">යටියන සේනාරත් පරාක්‍රම මහා විද්‍යාලය</div></div></div>
+        <div class="fb-stars">★★★★★</div>
+        <p class="fb-text" data-si="සමීර සර්ගේ සිංහල පන්තිය මගේ ප්‍රියතම පන්තියක් වුණා. සර් සිංහල සාහිත්‍යය, ව්‍යාකරණ සහ රචනා ලිවීම ඉතාමත් රසවත්ව සහ ගැඹුරින් කියා දෙනවා. සිංහල විෂය පිළිබඳව කලින් ලොකු උනන්දුවක් නොතිබුණු මට සර්ගේ උගන්වන විලාසය නිසා සිංහල සාහිත්‍යයට ලොකු ඇල්මක් ඇති වුණා. සාමාන්‍ය පෙළ විභාගයෙන් විශිෂ්ට ලෙස 'A' සාමාර්ථයක් ලබා ගැනීමට සර්ගේ පන්තිය මට ලොකු ශක්තියක් වුණා." data-en="I take Sinhala class with Samira sir. He covers literature, grammar, and essays very comprehensively. As a student who never had much interest in Sinhala, Gurukula's Sinhala class sparked a real love for the subject in me. Scoring an A at O/L was a wonderful achievement.">සමීර සර්ගේ සිංහල පන්තිය මගේ ප්‍රියතම පන්තියක් වුණා. සර් සිංහල සාහිත්‍යය, ව්‍යාකරණ සහ රචනා ලිවීම ඉතාමත් රසවත්ව සහ ගැඹුරින් කියා දෙනවා. සිංහල විෂය පිළිබඳව කලින් ලොකු උනන්දුවක් නොතිබුණු මට සර්ගේ උගන්වන විලාසය නිසා සිංහල සාහිත්‍යයට ලොකු ඇල්මක් ඇති වුණා. සාමාන්‍ය පෙළ විභාගයෙන් විශිෂ්ට ලෙස 'A' සාමාර්ථයක් ලබා ගැනීමට සර්ගේ පන්තිය මට ලොකු ශක්තියක් වුණා.</p>
+      </div>
+      <div class="fb-card">
+        <div class="fb-user"><div class="fb-av av-i">LS</div><div><div class="fb-name">ලහිරු සිල්වා</div><div class="fb-school">තක්ෂිලා මධ්‍ය මහා විද්‍යාලය, ගම්පහ</div></div></div>
+        <div class="fb-stars">★★★★★</div>
+        <p class="fb-text" data-si="මගේ යාළුවෙක්ගෙන් දැනගෙන තමයි මම ගුරුකුල ආයතනයට සම්බන්ධ වුණේ. මුලින් ලොකු බලාපොරොත්තුවක් නොතිබුණත්, පන්තිවලට සහභාගි වුණාට පස්සේ මම පුදුමයට පත් වුණා. නලින් සර්ගේ ගණිතය පන්තිය ඉතාමත් ක්‍රමානුකූලව සැලසුම් කර තිබුණා. සෑම පාඩමක්ම සිසුන්ට හොඳින් වැටහෙන තුරු ඉවසිලිවන්තව කියා දී ප්‍රශ්න පත්‍ර මඟින් නිරන්තරයෙන් ඇගයීමට ලක් කරනවා. මේ වගේ පුද්ගලික අවධානයක් ලැබෙන නිසා ඕනෑම මට්ටමක ළමයෙකුට විභාගය පහසුවෙන්ම සමත් වෙන්න පුළුවන්." data-en="I heard about Gurukula from a friend. I went without big expectations but was pleasantly surprised. Nalin sir's Maths class is very structured — each lesson is carefully planned, and he checks whether students understood before moving on. That personal attention makes a big difference. I have no hesitation recommending Gurukula.">මගේ යාළුවෙක්ගෙන් දැනගෙන තමයි මම ගුරුකුල ආයතනයට සම්බන්ධ වුණේ. මුලින් ලොකු බලාපොරොත්තුවක් නොතිබුණත්, පන්තිවලට සහභාගි වුණාට පස්සේ මම පුදුමයට පත් වුණා. නලින් සර්ගේ ගණිතය පන්තිය ඉතාමත් ක්‍රමානුකූලව සැලසුම් කර තිබුණා. සෑම පාඩමක්ම සිසුන්ට හොඳින් වැටහෙන තුරු ඉවසිලිවන්තව කියා දී ප්‍රශ්න පත්‍ර මඟින් නිරන්තරයෙන් ඇගයීමට ලක් කරනවා. මේ වගේ පුද්ගලික අවධානයක් ලැබෙන නිසා ඕනෑම මට්ටමක ළමයෙකුට විභාගය පහසුවෙන්ම සමත් වෙන්න පුළුවන්.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div class="sec-header" data-aos="fade-down">
+      <h2 data-si="නිතර <span>අසන ප්‍රශ්න</span>" data-en="Frequently Asked <span>Questions</span>">නිතර <span>අසන ප්‍රශ්න</span></h2>
+      <p data-si="ඔබේ ප්‍රශ්නයට පිළිතුර" data-en="Find answers to your questions">ඔබේ ප්‍රශ්නයට පිළිතුර</p>
+      <div class="divider"></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span data-si="පන්ති ශ්‍රේණි මොනවාද?" data-en="Which grades are available?">පන්ති ශ්‍රේණි මොනවාද?</span><span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a" data-si="ශ්‍රේණිය 1 සිට 11 දක්වා සිංහල මාධ්‍ය පන්ති පැවැත්වේ. ශ්‍රේණිය 6 සිට 11 දක්වා English Medium Science &amp; Maths ද ලබා ගත හැකිය." data-en="Classes are available from Grade 1 to 11 in Sinhala medium. English Medium Science &amp; Maths is also available for Grades 6 to 11.">ශ්‍රේණිය 1 සිට 11 දක්වා සිංහල මාධ්‍ය පන්ති පැවැත්වේ. ශ්‍රේණිය 6 සිට 11 දක්වා English Medium Science &amp; Maths ද ලබා ගත හැකිය.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span data-si="ශිෂ්‍යත්ව විශේෂ පන්ති තිබේද?" data-en="Are there special scholarship classes?">ශිෂ්‍යත්ව විශේෂ පන්ති තිබේද?</span><span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a" data-si="ශ්‍රේණිය 4 සහ 5 ශිෂ්‍යත්ව විශේෂ පන්ති, Ajith Kularathna sir සහ Nilantha Rathnawira sir විසින් සිකුරාදා දිනවල පවත්වනු ලැබේ." data-en="Special scholarship classes for Grades 4 and 5 are conducted by Ajith Kularathna sir and Nilantha Rathnawira sir on Fridays.">ශ්‍රේණිය 4 සහ 5 ශිෂ්‍යත්ව විශේෂ පන්ති, Ajith Kularathna sir සහ Nilantha Rathnawira sir විසින් සිකුරාදා දිනවල පවත්වනු ලැබේ.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span data-si="English Medium classes සඳහා ලියාපදිංචි වන්නේ කෙසේද?" data-en="How do I enroll for English Medium classes?">English Medium classes සඳහා ලියාපදිංචි වන්නේ කෙසේද?</span><span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a" data-si="077 688 9949 ට කතා කර ලියාපදිංචි විය හැකිය. English Medium Science &amp; Maths grade 6–11 සඳහා ලබා ගත හැකිය." data-en="You can enroll by calling 077 688 9949. English Medium Science &amp; Maths is available for Grades 6–11.">077 688 9949 ට කතා කර ලියාපදිංචි විය හැකිය. English Medium Science &amp; Maths grade 6–11 සඳහා ලබා ගත හැකිය.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span data-si="ගාස්තු සහ ගෙවීමේ ක්‍රම?" data-en="What are the fees and payment methods?">ගාස්තු සහ ගෙවීමේ ක්‍රම?</span><span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a" data-si="ගාස්තු සහ ගෙවීම් පිළිබඳ තොරතුරු සඳහා 077 688 9949 ට කෙළින්ම අමතන්න." data-en="For details on fees and payment, please call us directly on 077 688 9949.">ගාස්තු සහ ගෙවීම් පිළිබඳ තොරතුරු සඳහා 077 688 9949 ට කෙළින්ම අමතන්න.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span data-si="Zumba සහ Dance classes ද ලබා ගත හැකිද?" data-en="Are Zumba and Dance classes available?">Zumba සහ Dance classes ද ලබා ගත හැකිද?</span><span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a" data-si="ඔව්! Zumba, නර්තනය, සංගීතය සහ චිත්‍ර කලාව ද ශ්‍රේණිය 6 සිට ලබා ගත හැකිය." data-en="Yes! Zumba, Dance, Music and Art classes are also available from Grade 6 onwards.">ඔව්! Zumba, නර්තනය, සංගීතය සහ චිත්‍ර කලාව ද ශ්‍රේණිය 6 සිට ලබා ගත හැකිය.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="sec-header" data-aos="fade-down">
+      <h2 data-si="සම්බන්ධ <span>වන්න</span>" data-en="Get In <span>Touch</span>">සම්බන්ධ <span>වන්න</span></h2>
+      <p data-si="ඕනෑම ප්‍රශ්නයකට, ලියාපදිංචියකට" data-en="For any inquiry or enrollment">ඕනෑම ප්‍රශ්නයකට, ලියාපදිංචියකට</p>
+      <div class="divider"></div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-left">
+        <h2 data-si="ගුරුකුල අධ්‍යාපන ආයතනය" data-en="Gurukula Education Institute">ගුරුකුල අධ්‍යාපන ආයතනය</h2>
+        <p data-si="යටියන · ශ්‍රේණිය 1 සිට 11 දක්වා" data-en="Yatiyena · Grade 1 to 11">යටියන · ශ්‍රේණිය 1 සිට 11 දක්වා</p>
+        <a href="tel:0776889949" class="phone-big">077 688 9949</a>
+        <div class="cd-items">
+          <div class="cd-item">📍 <strong data-si="ස්ථානය:" data-en="Location:">ස්ථානය:</strong>&nbsp;<span data-si="යටියන" data-en="Yatiyena">යටියන</span></div>
+          <div class="cd-item">🕐 <strong data-si="කාලය:" data-en="Days:">කාලය:</strong>&nbsp;<span data-si="සිකුරාදා – ඉරිදා" data-en="Friday – Sunday">සිකුරාදා – ඉරිදා</span></div>
+          <div class="cd-item">🎓 <strong data-si="ශ්‍රේණි:" data-en="Grades:">ශ්‍රේණි:</strong>&nbsp;1 – 11 (Sinhala &amp; English Medium)</div>
+        </div>
+      </div>
+      <div class="contact-right">
+        <div class="loc-card">
+          <h4 data-si="📞 දැන්ම ලියාපදිංචි වන්න" data-en="📞 Enroll Now">📞 දැන්ම ලියාපදිංචි වන්න</h4>
+          <p data-si="ශ්‍රේණිය, විෂය සහ ශිෂ්‍යයාගේ නම සමඟ කතා කරන්න" data-en="Call us with the student's name, grade and subject">ශ්‍රේණිය, විෂය සහ ශිෂ්‍යයාගේ නම සමඟ කතා කරන්න</p>
+        </div>
+        <div class="loc-card">
+          <h4>🇬🇧 English Medium Classes</h4>
+          <p data-si="Science &amp; Maths — Grade 6 to 11" data-en="Science &amp; Maths — Grade 6 to 11">Science &amp; Maths — Grade 6 to 11<br>Mohamed Fazeem | Indika Wimalachandra</p>
+        </div>
+        <a href="tel:0776889949" class="call-btn" data-si="📞 දැන්ම අමතන්න" data-en="📞 Call Us Now">📞 දැන්ම අමතන්න</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHER MODAL -->
+<div class="modal-overlay" id="tModal" onclick="closeModal(event)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div class="modal-header" id="mHeader">
+      <span class="modal-init" id="mInit"></span>
+    </div>
+    <div class="modal-body">
+      <div class="modal-name" id="mName"></div>
+      <div class="modal-subj" id="mSubj"></div>
+      <div class="modal-tt-title" data-si="පන්ති කාලසටහන" data-en="Class Schedule">පන්ති කාලසටහන</div>
+      <div class="modal-tt-list" id="mTTList"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="footer-grid">
+    <div class="footer-brand-col">
+      <h3>ගුරු<span style="color:var(--primary);">කුල</span></h3>
+      <p data-si="ප්‍රදේශයේ විශිෂ්ටතම ගුරු තරු සමඟ ඔබේ අධ්‍යාපන ගමන සාර්ථක කරගන්න. ප්‍රතිඵල තුළින් ම ගොඩනැගුණු විශ්වාසය." data-en="Boost your learning potential and excel in A/L & O/L with expert guidance, innovative techniques, and proven success strategies.">ප්‍රදේශයේ විශිෂ්ටතම ගුරු තරු සමඟ ඔබේ අධ්‍යාපන ගමන සාර්ථක කරගන්න. ප්‍රතිඵල තුළින් ම ගොඩනැගුණු විශ්වාසය.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-si="ඉක්මන් සබැඳි" data-en="Quick Links">Quick Links</h4>
+      <ul>
+        <li><a href="#timetable">2025 Classes</a></li>
+        <li><a href="#timetable">2026 Classes</a></li>
+        <li><a href="#timetable">2027 Classes</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-si="ශාඛා" data-en="Branches">Branches</h4>
+      <ul>
+        <li><a href="#">Gurukula - Yatiyena</a></li>
+        <li><a href="#">Gurukula - Main</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-si="තොරතුරු" data-en="Information">Information</h4>
+      <ul>
+        <li><a href="#teachers">Our Lecturers</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#timetable">Class Time Tables</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-si="වෙනත්" data-en="Other">Other</h4>
+      <ul>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="copy">Copyright &copy; 2026 . Gurukula Education Institute</p>
+</footer>
+
+<script>
+/* ---- ABOUT SLIDER ---- */
+let slideIdx=0;
+const slides=document.querySelectorAll('.about-slide');
+const dots=document.querySelectorAll('.about-dot');
+function goSlide(i){
+  slides[slideIdx].classList.remove('active');
+  dots[slideIdx].classList.remove('active');
+  slideIdx=i;
+  slides[slideIdx].classList.add('active');
+  dots[slideIdx].classList.add('active');
+}
+setInterval(()=>goSlide((slideIdx+1)%slides.length),3500);
+
+/* ---- TEACHER CAROUSEL (Syzygy fan style, 5 subjects only) ---- */
+const teachers=[
+  {init:'SB', name:'සමීර බණ්ඩාර',    nameEn:'Samira Bandara',         subj:'සිංහල',    subjEn:'Sinhala',  qual:'',                              bg:'#e8a045', img:'teachers_img_nobg/SB_Sinhala.png'},
+  {init:'NS', name:'නලින් සුරංග',     nameEn:'Nalin Suranga',          subj:'ගණිතය',    subjEn:'Maths',    qual:'B.Sc. Special in Maths',        bg:'#e87a5a', img:'teachers_img_nobg/NS_Maths.png'},
+  {init:'MF', name:'Mohamed Fazeem',   nameEn:'Mohamed Fazeem',         subj:'ගණිතය (ENG)', subjEn:'Maths (ENG)', qual:'BSc. Eng. (Hons) Peradeniya', bg:'#c44dff', img:'teachers_img_nobg/MF_Maths_ENG.png'},
+  {init:'SS', name:'සදාමාලී සිල්වාපුල්ලේ', nameEn:'Sadamali Silvapulle', subj:'ඉංග්‍රීසි', subjEn:'English', qual:'TKT – British Council',      bg:'#5b8ef7', img:'teachers_img_nobg/SS_English.png'},
+  {init:'JD', name:'ජයන්ත ධර්මසේන',  nameEn:'Jayantha Dharmasena',    subj:'විද්‍යාව',  subjEn:'Science',  qual:'',                              bg:'#4fc97a', img:'teachers_img_nobg/JD_Science.png'},
+  {init:'IW', name:'Indika Wimalachandra', nameEn:'Indika Wimalachandra', subj:'Science (ENG)', subjEn:'Science (ENG)', qual:'Nat. Dip. Teaching Science', bg:'#059669', img:'teachers_img_nobg/IW_Science_ENG.png'},
+  {init:'LJ', name:'ලිනාස් ජයසිංහ',  nameEn:'Linas Jayasinghe',       subj:'ඉතිහාසය',  subjEn:'History',  qual:'',                              bg:'#a78bfa', img:'teachers_img_nobg/LJ_History.png'},
+  {init:'AK', name:'අජිත් කුලරත්න',   nameEn:'Ajith Kularathna',       subj:'ශිෂ්‍යත්වය',  subjEn:'Scholarship',  qual:'', bg:'#f43f5e', img:'teachers_img_nobg/AK_Scholarship.png'},
+  {init:'NR', name:'නිලන්ත රත්නවීර', nameEn:'Nilantha Rathnawira',    subj:'ශිෂ්‍යත්වය',  subjEn:'Scholarship',  qual:'', bg:'#eab308', img:'teachers_img_nobg/NR_Scholarship.png'},
+  {init:'SM', name:'සනෝද්‍යා කාවින්දි', nameEn:'Sanodaya Kawindi',         subj:'ICT',      subjEn:'ICT',          qual:'', bg:'#06b6d4', img:'teachers_img_nobg/SM_ICT_ICT.png'},
+  {init:'HL', name:'හේමන්ත ලියනපතිරණ', nameEn:'Hemantha Liyanapathirana', subj:'සංගීතය', subjEn:'Music', qual:'', bg:'#f59e0b', img:'teachers_img_nobg/HL_Music.png'},
+  {init:'BH', name:'බණ්ඩාර කේ. හේරත්', nameEn:'Bandara K. Herath', subj:'වාණිජ', subjEn:'Commerce', qual:'', bg:'#10b981', img:'teachers_img_nobg/BH_Commerce.png'},
+  {init:'SM', name:'ශාලිකා නදීෂානි මාරසිංහ', nameEn:'Shalika Nadeeshani', subj:'දෙමළ', subjEn:'Tamil', qual:'', bg:'#ec4899', img:'teachers_img_nobg/SM_T_Tamil.png'},
+  {init:'IT', name:'ඉෂානි තෙන්නකෝන්', nameEn:'Ishani Tennakoon', subj:'ප්‍රාථමික', subjEn:'Primary', qual:'', bg:'#8b5cf6', img:'teachers_img_nobg/IT_Primary.png'},
+  {init:'NW', name:'නාමල් වීරද්දෙනිය', nameEn:'Namal Weeraddeniya', subj:'නර්තනය', subjEn:'Dancing', qual:'', bg:'#3b82f6', img:'teachers_img_nobg/NW_Dancing.png'},
+  {init:'MG', name:'මහේෂ් ගමගේ', nameEn:'Mahesh Gamage', subj:'චිත්‍ර කලාව', subjEn:'Art', qual:'', bg:'#ef4444', img:'teachers_img_nobg/MG_Art.png'},
+  {init:'PD', name:'පුබුදු / දිල්රුක්ෂි', nameEn:'Pubudu / Dilrukshi', subj:'Zumba', subjEn:'Zumba', qual:'', bg:'#14b8a6', img:'teachers_img_nobg/PD_Zumba.png'}
+];
+
+const carouselTeachers = teachers.filter(t => ['SB', 'NS', 'SS', 'JD', 'LJ'].includes(t.init));
+let carIdx=Math.floor(carouselTeachers.length/2);
+
+function buildCarousel(){
+  const track=document.getElementById('carTrack');
+  const dotsEl=document.getElementById('carDots');
+  if(!track||!dotsEl) return;
+  track.innerHTML=''; dotsEl.innerHTML='';
+  const n=carouselTeachers.length;
+
+  // Build offset list: center=0, left=-1,-2, right=+1,+2
+  const offsets=[];
+  for(let i=0;i<n;i++){
+    let off=i-carIdx;
+    // wrap around
+    if(off>n/2) off-=n;
+    if(off<-n/2) off+=n;
+    offsets.push(off);
+  }
+
+  // Sort by |offset| desc so center renders on top
+  const order=[...Array(n).keys()].sort((a,b)=>Math.abs(offsets[b])-Math.abs(offsets[a]));
+
+  order.forEach(i=>{
+    const t=carouselTeachers[i];
+    const off=offsets[i];
+    const absOff=Math.abs(off);
+    if(absOff>2){return;} // only show 5
+
+    const isCenter=off===0;
+    const subj=lang==='en'?t.subjEn:t.subj;
+    const tname=lang==='en'?t.nameEn:t.name;
+
+    // Position math (like Syzygy)
+    const xShift = off === 0 ? 0 : Math.sign(off) * (absOff === 1 ? 220 : 380);
+    const scale=isCenter?1:off===1||off===-1?0.88:0.76;
+    const zIndex=10-absOff;
+    const opacity=absOff>2?0:1;
+    const blur=absOff>1?'1px':'0';
+
+    const card=document.createElement('div');
+    card.style.cssText=`
+      position:absolute;
+      left:50%;
+      transform:translateX(calc(-50% + ${xShift}px)) scale(${scale});
+      z-index:${zIndex};
+      opacity:${opacity};
+      filter:blur(${blur});
+      transition:all .4s ease;
+      cursor:${isCenter?'default':'pointer'};
+    `;
+    card.className='car-card-pos'+(isCenter?' car-center':'');
+
+    card.innerHTML=`
+      <div class="car-card" style="width:${isCenter?'280px':'230px'}; height:${isCenter?'360px':'290px'}; display:flex; flex-direction:column; overflow:hidden;">
+        <div class="car-photo" style="background:${t.bg}; height:${isCenter?'200px':'160px'}; flex-shrink:0; display:flex; align-items:flex-end; justify-content:center; overflow:hidden;">
+          ${t.img ? `<img src="${t.img}" alt="${tname}" style="height:90%; width:auto; object-fit:contain; filter:drop-shadow(0 4px 10px rgba(0,0,0,0.15)); pointer-events:none;">` : `<span class="car-init" style="font-size:${isCenter?'5rem':'4rem'}; font-weight:800; color:rgba(255,255,255,0.7); margin-bottom:auto; margin-top:auto;">${t.init}</span>`}
+        </div>
+        <div class="car-info${isCenter?' car-info-center':''}" style="flex-grow:1; display:flex; flex-direction:column; justify-content:center; align-items:center; background:#fff; padding: 1.2rem;">
+          <div class="car-name" style="font-weight:${isCenter?'800':'700'}; font-size:${isCenter?'1.1rem':'0.95rem'}; color:var(--text); text-align:center;">${tname}</div>
+          <div class="car-subj" style="color:${t.bg}; font-size:${isCenter?'0.95rem':'0.8rem'}; font-weight:700; font-family:'Noto Sans Sinhala',sans-serif; margin-top:4px; text-align:center;">${subj}</div>
+          ${t.qual&&isCenter?`<div class="car-qual" style="margin-top:8px; font-size:0.75rem; color:var(--muted); text-align:center;">${t.qual}</div>`:''}
+        </div>
+      </div>`;
+
+    if(!isCenter) card.onclick=()=>{carIdx=i;buildCarousel();};
+    track.appendChild(card);
+
+    // dots
+    const dot=document.createElement('div');
+    dot.className='car-dot'+(i===carIdx?' active':'');
+    dot.onclick=()=>{carIdx=i;buildCarousel();};
+    dotsEl.appendChild(dot);
+  });
+}
+
+function carMove(dir){
+  carIdx=(carIdx+dir+carouselTeachers.length)%carouselTeachers.length;
+  buildCarousel();
+}
+setInterval(()=>carMove(1),3500);
+
+let currentFilter = 'All';
+function filterTeachers(filter, btn) {
+  if(btn) {
+    document.querySelectorAll('#all-teachers .gtab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  currentFilter = filter;
+  renderTeacherGrid();
+}
+
+function renderTeacherGrid() {
+  const grid = document.getElementById('teachersGrid');
+  if(!grid) return;
+  grid.innerHTML = '';
+  
+  const filtered = teachers.filter(t => {
+    if(currentFilter === 'All') return true;
+    if(currentFilter === 'Maths' && (t.subjEn === 'Maths' || t.subjEn === 'Maths (ENG)')) return true;
+    if(currentFilter === 'Science' && (t.subjEn === 'Science' || t.subjEn === 'Science (ENG)')) return true;
+    return t.subjEn === currentFilter;
+  });
+
+  filtered.forEach(t => {
+    const tname = lang === 'en' ? t.nameEn : t.name;
+    const tsubj = lang === 'en' ? t.subjEn : t.subj;
+    
+    const card = document.createElement('div');
+    card.className = 't-card';
+    card.innerHTML = `
+      <div class="t-photo" style="background:${t.bg}; display:flex; align-items:flex-end; justify-content:center; overflow:hidden;">
+        ${t.img ? `<img src="${t.img}" alt="${tname}" style="height:90%; width:auto; object-fit:contain; filter:drop-shadow(0 4px 10px rgba(0,0,0,0.15));">` : `<span class="t-init" style="margin-bottom:auto; margin-top:auto;">${t.init}</span>`}
+      </div>
+      <div class="t-info">
+        <div class="t-name">${tname}</div>
+        <div class="t-subj" style="color:${t.bg}; font-family:'Noto Sans Sinhala',sans-serif;">${tsubj}</div>
+        <div class="t-action">
+          <button class="view-btn" onclick="openTeacherModal('${t.init}')">View Profile</button>
+          <div class="t-arrow">&#8594;</div>
+        </div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+
+
+const ttData={
+  6:[{s:"විද්‍යාව",d:"සෙනසුරාදා",t:"ප.ව 6.00–8.00"},{s:"ගණිතය",d:"බදාදා",t:"ප.ව 4.30–6.30"},{s:"ඉංග්‍රීසි",d:"සඳුදා",t:"ප.ව 5.00–7.00"},{s:"දෙමළ",d:"සඳුදා",t:"ප.ව 5.00–7.00"},{s:"චිත්‍ර",d:"සෙනසුරාදා",t:"ප.ව 6.00–8.00"},{s:"සංගීතය",d:"බ්‍රහස්පතින්දා",t:"ප.ව 4.00–6.00"},{s:"නැටුම්",d:"සිකුරාදා",t:"ප.ව 3.30–7.00"},{s:"ICT",d:"අඟහරුවාදා",t:"ප.ව 3.00–5.00"}],
+  7:[{s:"විද්‍යාව",d:"ඉරිදා",t:"ප.ව 2.00–4.00"},{s:"ගණිතය",d:"අඟහරුවාදා",t:"ප.ව 5.00–6.45"},{s:"ඉංග්‍රීසි",d:"සඳුදා",t:"ප.ව 5.00–7.00"},{s:"දෙමළ",d:"සඳුදා",t:"ප.ව 3.00–5.00"},{s:"චිත්‍ර",d:"සිකුරාදා",t:"ප.ව 6.00–8.00"},{s:"සංගීතය",d:"බ්‍රහස්පතින්දා",t:"ප.ව 4.00–6.00"},{s:"නැටුම්",d:"සිකුරාදා",t:"ප.ව 3.30–7.00"},{s:"ICT",d:"සෙනසුරාදා",t:"ප.ව 4.00–6.00"}],
+  8:[{s:"විද්‍යාව",d:"සෙනසුරාදා",t:"ප.ව 4.00–6.00"},{s:"ගණිතය",d:"අඟහරුවාදා",t:"ප.ව 3.15–5.00"},{s:"ඉංග්‍රීසි",d:"බ්‍රහස්පතින්දා",t:"ප.ව 3.00–5.30"},{s:"දෙමළ",d:"බ්‍රහස්පතින්දා",t:"ප.ව 5.00–7.00"},{s:"චිත්‍ර",d:"සිකුරාදා",t:"ප.ව 6.00–8.00"},{s:"සංගීතය",d:"බ්‍රහස්පතින්දා",t:"ප.ව 4.00–6.00"},{s:"නැටුම්",d:"සිකුරාදා",t:"ප.ව 3.30–7.00"},{s:"ICT",d:"සෙනසුරාදා",t:"ප.ව 2.00–4.00"}],
+  9:[{s:"විද්‍යාව",d:"සෙනසුරාදා",t:"ප.ව 1.30–3.30"},{s:"ගණිතය",d:"අඟහරුවාදා",t:"ප.ව 6.45–8.30"},{s:"ඉංග්‍රීසි",d:"බ්‍රහස්පතින්දා",t:"ප.ව 5.30–8.00"},{s:"දෙමළ",d:"බ්‍රහස්පතින්දා",t:"ප.ව 3.00–5.00"},{s:"චිත්‍ර",d:"සිකුරාදා",t:"ප.ව 6.00–8.00"},{s:"සංගීතය",d:"බ්‍රහස්පතින්දා",t:"ප.ව 4.00–6.00"},{s:"නැටුම්",d:"සිකුරාදා",t:"ප.ව 3.30–7.00"},{s:"ICT",d:"අඟහරුවාදා",t:"ප.ව 7.00–9.00"},{s:"සිංහල",d:"සිකුරාදා",t:"ප.ව 7.00–9.00"},{s:"ඉතිහාසය",d:"බ්‍රහස්පතින්දා",t:"ප.ව 5.00–7.00"}],
+  10:[{s:"විද්‍යාව",d:"ඉරිදා",t:"ප.ව 6.30–9.00"},{s:"ගණිතය",d:"බදාදා",t:"ප.ව 3.15–6.00"},{s:"ඉංග්‍රීසි",d:"සඳුදා",t:"ප.ව 4.30–7.00"},{s:"දෙමළ",d:"සඳුදා",t:"ප.ව 5.00–8.00"},{s:"චිත්‍ර",d:"සිකුරාදා",t:"ප.ව 6.00–8.00"},{s:"සංගීතය",d:"බ්‍රහස්පතින්දා",t:"ප.ව 4.00–6.00"},{s:"නැටුම්",d:"සිකුරාදා",t:"ප.ව 3.30–7.00"},{s:"ICT",d:"අඟහරුවාදා",t:"ප.ව 5.00–7.00"},{s:"සිංහල",d:"සෙනසුරාදා",t:"පෙ.ව 10.30–12.30"},{s:"වාණිජ",d:"සඳුදා",t:"ප.ව 7.00–8.00"},{s:"ඉතිහාසය",d:"බ්‍රහස්පතින්දා",t:"ප.ව 7.00–9.00"}],
+  11:[{s:"විද්‍යාව",d:"ඉරිදා",t:"ප.ව 3.30–6.30"},{s:"ගණිතය",d:"බදාදා",t:"ප.ව 6.30–9.00"},{s:"ඉංග්‍රීසි",d:"සඳුදා",t:"ප.ව 4.30–7.00"},{s:"දෙමළ",d:"බ්‍රහස්පතින්දා",t:"ප.ව 3.00–6.00"},{s:"චිත්‍ර",d:"සිකුරාදා",t:"ප.ව 6.00–8.00"},{s:"සංගීතය",d:"බ්‍රහස්පතින්දා",t:"ප.ව 4.00–6.00"},{s:"නැටුම්",d:"සිකුරාදා",t:"ප.ව 3.30–7.00"},{s:"ICT",d:"ඉරිදා",t:"ප.ව 6.30–8.30"},{s:"සිංහල",d:"බ්‍රහස්පතින්දා",t:"ප.ව 7.00–9.00"},{s:"වාණිජ",d:"සඳුදා",t:"ප.ව 4.30–6.30"},{s:"ඉතිහාසය",d:"සඳුදා",t:"ප.ව 7.00–9.00"}]
+};
+
+let currentGrade=6, currentGradeBtn=null;
+
+function showGrade(g,btn){
+  document.querySelectorAll('.gtab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  currentGrade=g; currentGradeBtn=btn;
+  renderTT();
+}
+
+function renderTT(){
+  document.getElementById('ttGrid').innerHTML=ttData[currentGrade].map(d=>`
+    <div class="tt-card">
+      <span class="tt-subj">${d.s}</span>
+      <div class="tt-right"><span class="tt-day">${d.d}</span><span class="tt-time">${d.t}</span></div>
+    </div>`).join('');
+}
+
+/* ---- FAQ ---- */
+function toggleFaq(el){
+  const a=el.nextElementSibling;
+  const isOpen=a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.faq-q').forEach(x=>x.classList.remove('open'));
+  if(!isOpen){a.classList.add('open');el.classList.add('open');}
+}
+
+/* ---- LANGUAGE SWITCH ---- */
+let lang='si';
+
+function setLang(l){
+  lang=l;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');
+  document.documentElement.lang=l==='si'?'si':'en';
+
+  // Switch all [data-si] / [data-en] elements
+  document.querySelectorAll('[data-si],[data-en]').forEach(el=>{
+    const val=el.getAttribute('data-'+l);
+    if(val!==null){
+      // For elements that contain HTML (spans etc), use innerHTML; otherwise textContent
+      if(val.includes('<')){el.innerHTML=val;}
+      else{el.textContent=val;}
+    }
+  });
+
+  // Re-render timetable (subject names are Sinhala-only in data, so keep as-is)
+  renderTT();
+  buildCarousel();
+  renderTeacherGrid();
+}
+
+function openTeacherModal(init) {
+  const t = teachers.find(x => x.init === init);
+  if(!t) return;
+  document.getElementById('mInit').innerText = t.init;
+  document.getElementById('mHeader').style.background = t.bg;
+  document.getElementById('mName').innerText = lang === 'en' ? t.nameEn : t.name;
+  document.getElementById('mSubj').innerText = lang === 'en' ? t.subjEn : t.subj;
+  document.getElementById('mSubj').style.color = t.bg;
+  
+  const ttList = document.getElementById('mTTList');
+  let classes = [];
+  
+  if (t.init === 'AK') {
+    classes.push({grade: '4 ශ්‍රේණිය', day: 'සිකුරාදා', time: 'ප.ව 3.30 – 5.30'});
+    classes.push({grade: '5 ශ්‍රේණිය', day: 'සිකුරාදා', time: 'ප.ව 5.30 – 8.30'});
+  } else if (t.init === 'NR') {
+    classes.push({grade: '4 ශ්‍රේණිය', day: 'ඉරිදා', time: 'ප.ව 5.00 – 8.00'});
+    classes.push({grade: '5 ශ්‍රේණිය', day: 'අඟහරුවාදා', time: 'ප.ව 4.00 – 8.00'});
+  } else if (t.init === 'MF' || t.init === 'IW') {
+    classes.push({grade: '6–11 ශ්‍රේණි', day: 'Contact Us', time: '077 688 9949'});
+  } else {
+    for(let grade in ttData) {
+      ttData[grade].forEach(cls => {
+        if(cls.s === t.subj || cls.s === t.subjEn || (t.subj === 'ICT' && cls.s === 'ICT')) {
+          classes.push({grade: grade + ' ශ්‍රේණිය', day: cls.d, time: cls.t});
+        }
+      });
+    }
+  }
+
+  if (classes.length > 0) {
+    ttList.innerHTML = classes.map(c => `
+      <div class="modal-tt-item">
+        <div class="modal-tt-grade">${c.grade}</div>
+        <div class="modal-tt-time"><span class="modal-tt-day">${c.day}</span> ${c.time}</div>
+      </div>
+    `).join('');
+  } else {
+    ttList.innerHTML = `<div style="text-align:center; padding: 20px; color:var(--muted);">කාලසටහන සඳහා ආයතනය විමසන්න<br><br>📞 077 688 9949</div>`;
+  }
+  
+  document.getElementById('tModal').classList.add('active');
+}
+
+function closeModal(e) {
+  if (e && e.target !== document.getElementById('tModal')) return;
+  document.getElementById('tModal').classList.remove('active');
+}
+
+
+/* ---- STATS COUNTER ANIMATION ---- */
+function initCounters() {
+  const counters = document.querySelectorAll('.stat-num');
+  const speed = 200; // The lower the faster
+
+  const startCount = (counter) => {
+    const target = +counter.getAttribute('data-target');
+    let count = 0;
+    
+    const updateCount = () => {
+      let suffix = "";
+      if (target === 20 || target === 12) suffix = "+";
+      else if (target === 100) suffix = "%";
+
+      const inc = target / 40; // division steps
+
+      if (count < target) {
+        count += inc;
+        counter.innerText = Math.ceil(count) + suffix;
+        setTimeout(updateCount, 15);
+      } else {
+        counter.innerText = target + suffix;
+      }
+    };
+    
+    updateCount();
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        startCount(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  counters.forEach(counter => observer.observe(counter));
+}
+
+// Init
+showGrade(6, document.querySelector('.gtab'));
+buildCarousel();
+filterTeachers('All', null);
+initCounters();
+</script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+  </script>
+</body>
+</html>
