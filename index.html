@@ -1907,33 +1907,100 @@
       background: var(--accent);
     }
 
+    /* REGISTRATION */
+    .registration-section {
+      padding: 6rem 5%;
+      position: relative;
+      background: var(--bg);
+    }
+    .registration-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 3rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    }
+    .registration-inner h2 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+    }
+    .registration-inner p.subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      font-size: 1.1rem;
+    }
     .wa-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .wa-form .form-group {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-top: 15px;
+      gap: 8px;
     }
-    .wa-form .form-group input {
+    .wa-form .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+    .wa-form .form-group label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .wa-form .form-group input,
+    .wa-form .form-group textarea {
       width: 100%;
-      padding: 12px 15px;
+      padding: 14px 18px;
       border: 1px solid var(--border);
-      border-radius: 8px;
-      font-size: 0.9rem;
+      border-radius: 12px;
+      font-size: 1rem;
       background: var(--bg);
       color: var(--text);
       outline: none;
       transition: all 0.3s;
       box-sizing: border-box;
+      font-family: inherit;
     }
-    .wa-form .form-group input:focus {
+    .wa-form .form-group input:focus,
+    .wa-form .form-group textarea:focus {
       border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.1);
+      box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.1);
+      background: var(--white);
+    }
+    .wa-form .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
     }
     .wa-form .submit-btn {
+      grid-column: 1 / -1;
       border: none;
       cursor: pointer;
-      width: 100%;
-      margin-top: 5px;
+      margin-top: 15px;
+      background: #25D366;
+      color: white;
+      font-size: 1.15rem;
+      padding: 16px;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+    .wa-form .submit-btn:hover {
+      background: #1eb353;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    }
+    @media (max-width: 768px) {
+      .wa-form {
+        grid-template-columns: 1fr;
+      }
+      .registration-inner {
+        padding: 2rem 1.5rem;
+      }
     }
 
     /* FOOTER */
@@ -2916,6 +2983,43 @@
     </div>
   </section>
 
+  <!-- REGISTRATION -->
+  <section class="registration-section" id="register">
+    <div class="registration-inner" data-aos="zoom-in">
+      <h2 data-si="නව සිසුන් <span>ලියාපදිංචිය</span>" data-en="New Student <span>Registration</span>">නව සිසුන් <span>ලියාපදිංචිය</span></h2>
+      <p class="subtitle" data-si="පහත පෝරමය පුරවා අපවෙත එවන්න" data-en="Fill out the form below to register">පහත පෝරමය පුරවා අපවෙත එවන්න</p>
+      
+      <form id="waForm" class="wa-form" onsubmit="sendToWhatsApp(event)">
+        <div class="form-group">
+          <label data-si="ශිෂ්‍යයාගේ නම" data-en="Student Name">ශිෂ්‍යයාගේ නම / Student Name</label>
+          <input type="text" id="sName" placeholder="ex: K. Supun Perera" required>
+        </div>
+        
+        <div class="form-group">
+          <label data-si="පාසල" data-en="School">පාසල / School</label>
+          <input type="text" id="sSchool" placeholder="ex: Gampaha College" required>
+        </div>
+        
+        <div class="form-group">
+          <label data-si="ශ්‍රේණිය" data-en="Grade">ශ්‍රේණිය / Grade</label>
+          <input type="text" id="sGrade" placeholder="ex: Grade 10" required>
+        </div>
+        
+        <div class="form-group">
+          <label data-si="සහභාගි වීමට අවශ්‍ය පන්ති" data-en="Classes to attend">සහභාගි වීමට අවශ්‍ය පන්ති / Classes you wish to attend</label>
+          <input type="text" id="sSubject" placeholder="ex: English Medium Maths, Science" required>
+        </div>
+
+        <div class="form-group full-width">
+          <label data-si="වෙනත් විමසීම් / අමතර තොරතුරු" data-en="Other Inquiries / Extra Information">වෙනත් විමසීම් / අමතර තොරතුරු (Optional)</label>
+          <textarea id="sExtra" placeholder="ඔබට අමතර යමක් විමසීමට ඇත්නම් මෙහි සටහන් කරන්න... / Any other questions?"></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn" data-si="📲 WhatsApp හරහා ලියාපදිංචි වන්න" data-en="📲 Register via WhatsApp">📲 WhatsApp හරහා ලියාපදිංචි වන්න</button>
+      </form>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="contact-section" id="contact">
     <div class="contact-inner">
@@ -2945,21 +3049,6 @@
           </div>
         </div>
         <div class="contact-right">
-          <div class="loc-card">
-            <h4 data-si="📝 නව සිසුන් ලියාපදිංචිය" data-en="📝 New Student Registration">📝 නව සිසුන් ලියාපදිංචිය</h4>
-            <form id="waForm" class="wa-form" onsubmit="sendToWhatsApp(event)">
-              <div class="form-group">
-                <input type="text" id="sName" placeholder="ශිෂ්‍යයාගේ නම / Student Name" required>
-              </div>
-              <div class="form-group">
-                <input type="text" id="sGrade" placeholder="ශ්‍රේණිය / Grade" required>
-              </div>
-              <div class="form-group">
-                <input type="text" id="sSubject" placeholder="විෂය / Subject" required>
-              </div>
-              <button type="submit" class="call-btn submit-btn" style="background: #25D366; color: white;" data-si="📲 WhatsApp හරහා යවන්න" data-en="📲 Send via WhatsApp">📲 WhatsApp හරහා යවන්න</button>
-            </form>
-          </div>
           <div class="loc-card">
             <h4 data-si="📞 දැන්ම ලියාපදිංචි වන්න" data-en="📞 Enroll Now">📞 දැන්ම ලියාපදිංචි වන්න</h4>
             <p data-si="ශ්‍රේණිය, විෂය සහ ශිෂ්‍යයාගේ නම සමඟ කතා කරන්න"
@@ -3411,10 +3500,20 @@
     function sendToWhatsApp(e) {
       e.preventDefault();
       const name = document.getElementById('sName').value;
+      const school = document.getElementById('sSchool').value;
       const grade = document.getElementById('sGrade').value;
       const subject = document.getElementById('sSubject').value;
+      const extra = document.getElementById('sExtra').value;
       
-      const msg = `නව සිසුන් ලියාපදිංචිය\n\nනම: ${name}\nශ්‍රේණිය: ${grade}\nවිෂය: ${subject}`;
+      let msg = `නව සිසුන් ලියාපදිංචිය\n\n`;
+      msg += `නම (Name): ${name}\n`;
+      msg += `පාසල (School): ${school}\n`;
+      msg += `ශ්‍රේණිය (Grade): ${grade}\n`;
+      msg += `අවශ්‍ය පන්ති (Classes): ${subject}\n`;
+      if (extra.trim() !== '') {
+        msg += `\nඅමතර විමසීම්:\n${extra}`;
+      }
+      
       const encodedMsg = encodeURIComponent(msg);
       const waUrl = `https://wa.me/94776889949?text=${encodedMsg}`;
       
