@@ -3012,22 +3012,22 @@
         
         <div class="form-group">
           <label data-si="විෂය සහ ගුරුවරයා" data-en="Subject & Teacher">විෂය සහ ගුරුවරයා / Subject & Teacher</label>
-          <select id="sSubject" required>
-            <option value="" disabled selected>-- පන්තිය තෝරන්න / Select a Class --</option>
-            <option value="Sinhala - Samira Bandara">සිංහල - සමීර බණ්ඩාර / Sinhala</option>
-            <option value="Maths - Nalin Suranga">ගණිතය - නලින් සුරංග / Maths</option>
-            <option value="Maths (ENG) - Mohamed Fazeem">ගණිතය (ENG) - Mohamed Fazeem</option>
-            <option value="English - Sadamali Silvapulle">ඉංග්‍රීසි - සදාමාලී සිල්වාපුල්ලේ / English</option>
-            <option value="Science - Jayanthaa Dharmasena">විද්‍යාව - ජයන්තා ධර්මසේන / Science</option>
-            <option value="Science (ENG) - Sarani Balasooriya">විද්‍යාව (ENG) - Sarani Balasooriya</option>
-            <option value="History - Linas Jayasinghe">ඉතිහාසය - ලිනාස් ජයසිංහ / History</option>
-            <option value="Scholarship - Ajith / Nilantha">ශිෂ්‍යත්වය - අජිත් / නිලන්ත සර් / Scholarship</option>
-            <option value="ICT - Sanodaya Kawindi">ICT - සනෝද්‍යා කාවින්දි</option>
-            <option value="Commerce - Bandara Herath">වාණිජ - බණ්ඩාර කේ. හේරත් / Commerce</option>
-            <option value="Primary - Ishani Tennakoon">ප්‍රාථමික - ඉෂානි තෙන්නකෝන් / Primary</option>
-            <option value="Aesthetic (Dance/Music/Art)">සෞන්දර්ය (නර්තනය/සංගීතය/චිත්‍ර) / Aesthetic</option>
-            <option value="Other / Multiple Subjects">වෙනත් / පන්ති කිහිපයක් (පහළින් සඳහන් කරන්න)</option>
-          </select>
+          <input type="text" id="sSubject" list="subjectList" placeholder="Select or type (ex: Maths - Mohamed Sir)" required autocomplete="off">
+          <datalist id="subjectList">
+            <option value="Sinhala - Samira Bandara">
+            <option value="Maths - Nalin Suranga">
+            <option value="Maths (ENG) - Mohamed Fazeem">
+            <option value="English - Sadamali Silvapulle">
+            <option value="Science - Jayanthaa Dharmasena">
+            <option value="Science (ENG) - Sarani Balasooriya">
+            <option value="History - Linas Jayasinghe">
+            <option value="Scholarship - Ajith / Nilantha">
+            <option value="ICT - Sanodaya Kawindi">
+            <option value="Commerce - Bandara K. Herath">
+            <option value="Primary - Ishani Tennakoon">
+            <option value="Aesthetic (Dance/Music/Art)">
+            <option value="Multiple Subjects (Mention below)">
+          </datalist>
         </div>
 
         <div class="form-group full-width">
