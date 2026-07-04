@@ -1907,6 +1907,35 @@
       background: var(--accent);
     }
 
+    .wa-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 15px;
+    }
+    .wa-form .form-group input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      background: var(--bg);
+      color: var(--text);
+      outline: none;
+      transition: all 0.3s;
+      box-sizing: border-box;
+    }
+    .wa-form .form-group input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.1);
+    }
+    .wa-form .submit-btn {
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 5px;
+    }
+
     /* FOOTER */
     footer {
       background: #111827;
@@ -2746,10 +2775,10 @@
           </div>
           <div class="fb-stars">★★★★★</div>
           <p class="fb-text"
-            data-si="මම සහභාගි වුණේ මොහොමඩ් සර්ගේ ඉංග්‍රීසි මාධ්‍ය විද්‍යාව පන්තියටයි. සාමාන්‍යයෙන් සිංහල මාධ්‍ය පාසලක සිට පැමිණෙන දරුවෙකුට ඉංග්‍රීසි මාධ්‍යයෙන් විද්‍යාව සහ ගණිතය හැදෑරීම තරමක් අපහසු කාර්යයක් වුණත්, මොහොමඩ් සර් විෂය කරුණු ඉතාමත් සරලව සහ පැහැදිලිව ඉංග්‍රීසි භාෂාවෙන් කියා දෙන නිසා කිසිම අපහසුවක් දැනුණේ නැහැ. අමාරු විෂය කොටස් පවා ප්‍රායෝගිකව සහ දෘශ්‍ය මාධ්‍ය ඇසුරින් සර් පැහැදිලි කරන ආකාරය විශිෂ්ටයි. මේ නිසා සාමාන්‍ය පෙළ විභාගයෙන් විශිෂ්ට ජයක් ලබා ගැනීමටත්, උසස් පෙළ සඳහා ශක්තිමත් පදනමක් ගොඩනඟා ගැනීමටත් මට හැකි වුණා."
-            data-en="I attend Mohamed sir's English Medium Science class. He explains concepts in English very clearly and comfortably. It's tough for a student from a Sinhala medium school to follow English medium science — but Mohamed sir's method made it easy to progress without that being a barrier. I've built a strong foundation for A/Ls.">
-            මම සහභාගි වුණේ මොහොමඩ් සර්ගේ ඉංග්‍රීසි මාධ්‍ය විද්‍යාව පන්තියටයි. සාමාන්‍යයෙන් සිංහල මාධ්‍ය පාසලක සිට
-            පැමිණෙන දරුවෙකුට ඉංග්‍රීසි මාධ්‍යයෙන් විද්‍යාව සහ ගණිතය හැදෑරීම තරමක් අපහසු කාර්යයක් වුණත්, මොහොමඩ් සර් විෂය
+            data-si="මම සහභාගි වුණේ මොහොමඩ් සර්ගේ ඉංග්‍රීසි මාධ්‍ය ගණිතය පන්තියටයි. සාමාන්‍යයෙන් සිංහල මාධ්‍ය පාසලක සිට පැමිණෙන දරුවෙකුට ඉංග්‍රීසි මාධ්‍යයෙන් ගණිතය හැදෑරීම තරමක් අපහසු කාර්යයක් වුණත්, මොහොමඩ් සර් විෂය කරුණු ඉතාමත් සරලව සහ පැහැදිලිව ඉංග්‍රීසි භාෂාවෙන් කියා දෙන නිසා කිසිම අපහසුවක් දැනුණේ නැහැ. අමාරු විෂය කොටස් පවා ප්‍රායෝගිකව සහ දෘශ්‍ය මාධ්‍ය ඇසුරින් සර් පැහැදිලි කරන ආකාරය විශිෂ්ටයි. මේ නිසා සාමාන්‍ය පෙළ විභාගයෙන් විශිෂ්ට ජයක් ලබා ගැනීමටත්, උසස් පෙළ සඳහා ශක්තිමත් පදනමක් ගොඩනඟා ගැනීමටත් මට හැකි වුණා."
+            data-en="I attend Mohamed sir's English Medium Maths class. He explains concepts in English very clearly and comfortably. It's tough for a student from a Sinhala medium school to follow English medium maths — but Mohamed sir's method made it easy to progress without that being a barrier. I've built a strong foundation for A/Ls.">
+            මම සහභාගි වුණේ මොහොමඩ් සර්ගේ ඉංග්‍රීසි මාධ්‍ය ගණිතය පන්තියටයි. සාමාන්‍යයෙන් සිංහල මාධ්‍ය පාසලක සිට
+            පැමිණෙන දරුවෙකුට ඉංග්‍රීසි මාධ්‍යයෙන් ගණිතය හැදෑරීම තරමක් අපහසු කාර්යයක් වුණත්, මොහොමඩ් සර් විෂය
             කරුණු ඉතාමත් සරලව සහ පැහැදිලිව ඉංග්‍රීසි භාෂාවෙන් කියා දෙන නිසා කිසිම අපහසුවක් දැනුණේ නැහැ. අමාරු විෂය කොටස්
             පවා ප්‍රායෝගිකව සහ දෘශ්‍ය මාධ්‍ය ඇසුරින් සර් පැහැදිලි කරන ආකාරය විශිෂ්ටයි. මේ නිසා සාමාන්‍ය පෙළ විභාගයෙන්
             විශිෂ්ට ජයක් ලබා ගැනීමටත්, උසස් පෙළ සඳහා ශක්තිමත් පදනමක් ගොඩනඟා ගැනීමටත් මට හැකි වුණා.</p>
@@ -2916,6 +2945,21 @@
           </div>
         </div>
         <div class="contact-right">
+          <div class="loc-card">
+            <h4 data-si="📝 නව සිසුන් ලියාපදිංචිය" data-en="📝 New Student Registration">📝 නව සිසුන් ලියාපදිංචිය</h4>
+            <form id="waForm" class="wa-form" onsubmit="sendToWhatsApp(event)">
+              <div class="form-group">
+                <input type="text" id="sName" placeholder="ශිෂ්‍යයාගේ නම / Student Name" required>
+              </div>
+              <div class="form-group">
+                <input type="text" id="sGrade" placeholder="ශ්‍රේණිය / Grade" required>
+              </div>
+              <div class="form-group">
+                <input type="text" id="sSubject" placeholder="විෂය / Subject" required>
+              </div>
+              <button type="submit" class="call-btn submit-btn" style="background: #25D366; color: white;" data-si="📲 WhatsApp හරහා යවන්න" data-en="📲 Send via WhatsApp">📲 WhatsApp හරහා යවන්න</button>
+            </form>
+          </div>
           <div class="loc-card">
             <h4 data-si="📞 දැන්ම ලියාපදිංචි වන්න" data-en="📞 Enroll Now">📞 දැන්ම ලියාපදිංචි වන්න</h4>
             <p data-si="ශ්‍රේණිය, විෂය සහ ශිෂ්‍යයාගේ නම සමඟ කතා කරන්න"
@@ -3361,6 +3405,20 @@
           closeLightbox();
         }
       });
+    }
+
+    // Send to WhatsApp Registration
+    function sendToWhatsApp(e) {
+      e.preventDefault();
+      const name = document.getElementById('sName').value;
+      const grade = document.getElementById('sGrade').value;
+      const subject = document.getElementById('sSubject').value;
+      
+      const msg = `නව සිසුන් ලියාපදිංචිය\n\nනම: ${name}\nශ්‍රේණිය: ${grade}\nවිෂය: ${subject}`;
+      const encodedMsg = encodeURIComponent(msg);
+      const waUrl = `https://wa.me/94776889949?text=${encodedMsg}`;
+      
+      window.open(waUrl, '_blank');
     }
 
     // Init
