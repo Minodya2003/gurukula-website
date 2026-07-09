@@ -3243,7 +3243,7 @@
         card.innerHTML = `
       <div class="car-card" style="width:${isCenter ? '280px' : '230px'}; height:${isCenter ? '360px' : '290px'}; display:flex; flex-direction:column; overflow:hidden;">
         <div class="car-photo" style="background:${t.bg}; height:${isCenter ? '200px' : '160px'}; flex-shrink:0; display:flex; align-items:flex-end; justify-content:center; overflow:hidden;">
-          ${t.img ? `<img loading="lazy" src="${t.img}" alt="${tname}" style="${t.cover ? 'height:100%; width:100%; object-fit:cover;' : 'height:90%; width:auto; object-fit:contain; filter:drop-shadow(0 4px 10px rgba(0,0,0,0.15));'} pointer-events:none;">` : `<span class="car-init" style="font-size:${isCenter ? '5rem' : '4rem'}; font-weight:800; color:rgba(255,255,255,0.7); margin-bottom:auto; margin-top:auto;">${t.init}</span>`}
+          ${t.img ? `<img loading="lazy" src="${t.img}" alt="${tname}" style="${t.cover ? 'height:100%; width:100%; object-fit:cover; object-position:top;' : 'height:90%; width:auto; object-fit:contain; filter:drop-shadow(0 4px 10px rgba(0,0,0,0.15));'} pointer-events:none;">` : `<span class="car-init" style="font-size:${isCenter ? '5rem' : '4rem'}; font-weight:800; color:rgba(255,255,255,0.7); margin-bottom:auto; margin-top:auto;">${t.init}</span>`}
         </div>
         <div class="car-info${isCenter ? ' car-info-center' : ''}" style="flex-grow:1; display:flex; flex-direction:column; justify-content:center; align-items:center; background:#fff; padding: 1.2rem;">
           <div class="car-name" style="font-weight:${isCenter ? '800' : '700'}; font-size:${isCenter ? '1.1rem' : '0.95rem'}; color:var(--text); text-align:center;">${tname}</div>
@@ -3299,7 +3299,7 @@
         card.className = 't-card';
         card.innerHTML = `
       <div class="t-photo" style="background:${t.bg}; display:flex; align-items:flex-end; justify-content:center; overflow:hidden;">
-        ${t.img ? `<img loading="lazy" src="${t.img}" alt="${tname}" style="${t.cover ? 'height:100%; width:100%; object-fit:cover;' : 'height:90%; width:auto; object-fit:contain; filter:drop-shadow(0 4px 10px rgba(0,0,0,0.15));'}">` : `<span class="t-init" style="margin-bottom:auto; margin-top:auto;">${t.init}</span>`}
+        ${t.img ? `<img loading="lazy" src="${t.img}" alt="${tname}" style="${t.cover ? 'height:100%; width:100%; object-fit:cover; object-position:top;' : 'height:90%; width:auto; object-fit:contain; filter:drop-shadow(0 4px 10px rgba(0,0,0,0.15));'}">` : `<span class="t-init" style="margin-bottom:auto; margin-top:auto;">${t.init}</span>`}
       </div>
       <div class="t-info">
         <div class="t-name">${tname}</div>
